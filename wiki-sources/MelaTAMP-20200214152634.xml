@@ -1,0 +1,3276 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="de-formal">
+  <siteinfo>
+    <sitename>MelaTAMP</sitename>
+    <dbname>wikis</dbname>
+    <base>https://wikis.hu-berlin.de/melatamp/Hauptseite</base>
+    <generator>MediaWiki 1.31.6</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Medium</namespace>
+      <namespace key="-1" case="first-letter">Spezial</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Diskussion</namespace>
+      <namespace key="2" case="first-letter">Benutzer</namespace>
+      <namespace key="3" case="first-letter">Benutzer Diskussion</namespace>
+      <namespace key="4" case="first-letter">MelaTAMP</namespace>
+      <namespace key="5" case="first-letter">MelaTAMP Diskussion</namespace>
+      <namespace key="6" case="first-letter">Datei</namespace>
+      <namespace key="7" case="first-letter">Datei Diskussion</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki Diskussion</namespace>
+      <namespace key="10" case="first-letter">Vorlage</namespace>
+      <namespace key="11" case="first-letter">Vorlage Diskussion</namespace>
+      <namespace key="12" case="first-letter">Hilfe</namespace>
+      <namespace key="13" case="first-letter">Hilfe Diskussion</namespace>
+      <namespace key="14" case="first-letter">Kategorie</namespace>
+      <namespace key="15" case="first-letter">Kategorie Diskussion</namespace>
+      <namespace key="2300" case="first-letter">Gadget</namespace>
+      <namespace key="2301" case="first-letter">Gadget Diskussion</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget-Definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget-Definition Diskussion</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Certainty</title>
+    <ns>0</ns>
+    <id>47</id>
+    <revision>
+      <id>559</id>
+      <parentid>417</parentid>
+      <timestamp>2017-03-31T09:15:13Z</timestamp>
+      <contributor>
+        <username>Druskats</username>
+        <id>3</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="274">&quot;Certainty&quot; in this context is the certainty of the annotator that the reference block is correct with regards to '''all lines''' in the block. For now, whenever the certainty value needs to be differentiated, this should be done in the ''notes'' category in free text form.</text>
+      <sha1>8iodq9hw7q5znhspafhr5gjro8gub42</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Clause segmentation and annotation</title>
+    <ns>0</ns>
+    <id>57</id>
+    <revision>
+      <id>706</id>
+      <parentid>705</parentid>
+      <timestamp>2019-01-28T09:43:23Z</timestamp>
+      <contributor>
+        <username>Druskats</username>
+        <id>3</id>
+      </contributor>
+      <comment>/* FULL REF ANNOTATION */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="15166">To facilitate annotations on parts of a sentence, i.e., on spans of more than one token which may be smaller than the whole sentence (&amp;quot;ref&amp;quot;, after the respective Toolbox default marker &lt;code&gt;\ref&lt;/code&gt;), we have introduced &amp;quot;subref&amp;quot; annotations, which define the span which they apply to via the indices of the tokens it includes.
+
+There are different types of subref annotations (legend further below in section [Legend]), of which &quot;identified&quot; types can be used to use different subref spans within the same ref.
+
+'''NOTE''' The two ''unidentified global'' subref definition types will override any other definitions, including each other. Only the first global subref definition will be honoured when mapping the corpus.
+
+'''NOTE''' Do not mix different types of subref definition within one subref section. Mixing definitions has not been tested comprehensively and may lead to incorrect mappings.
+
+==SIMPLE==
+
+''Description:'' A line-by-line subref definition. Annotates a span over morphological tokens (if they exist, else lexical tokens) with the annotation key and value just from this line.
+
+''Type:'' No specific implementation
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref annotation marker} {from} {to} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\foo 1 4 bar&lt;/pre&gt;
+''Description:''
+
+Annotates a span over the 2nd to 5th morphological tokens with „foo:bar“, if a morphological layer exists, else annotates a span over lexical tokens 2–5.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot;| t2
+|align=&quot;center&quot; colspan=&quot;3&quot;| t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| '''t2'''
+|align=&quot;center&quot;| '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot;|
+
+|align=&quot;center&quot; colspan=&quot;4&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+|align=&quot;center&quot; colspan=&quot;9&quot;|
+
+|}
+
+==SIMPLE TARGETED==
+
+''Description:'' A line-by-line subref definition. Annotates a span over tokens on the targeted layer (morphological or lexical) with the annotation key and value just from this line.
+
+''Type:'' No specific implementation
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref annotation marker} {token marker} {from} {to} {annotation}
+&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\foo tx 1 4 bar&lt;/pre&gt;
+''Description:''
+
+Annotates a span over the 2nd to 5th token on the target tokenization layer (here, the lexical layer) with „foo:bar“.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | '''t2'''
+|align=&quot;center&quot; colspan=&quot;3&quot; | '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| t2
+|align=&quot;center&quot;| t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot;|
+
+|align=&quot;center&quot; colspan=&quot;7&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+|align=&quot;center&quot; colspan=&quot;6&quot; |
+
+|}
+
+==UNIDENTIFIED GLOBAL==
+
+''Description:'' A global subref definition. Annotates a span over morphological tokens (if they exist, else lexical tokens) with the annotation key and value from any line that has been declared a potential subref annotation line (via Pepper properties).
+
+''Type:'' '''org.corpus_tools.peppermodules.toolbox.text.data.SubrefDefinition.SUBREF_TYPE.UNIDENTIFIED_GLOBAL'''
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref marker} {from} {to}
+\\{subref annotation marker} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\subref 1 4
+\\foo bar
+\\rab oof&lt;/pre&gt;
+''Description:''
+
+Annotates a span over the 2nd to 5th token on the morphological layer with the annotations from the specified subref annotation markers, if a morphological layer exists, else annotates a span over lexical tokens 2–5.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | t2
+|align=&quot;center&quot; colspan=&quot;3&quot; | t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| '''t2'''
+|align=&quot;center&quot;| '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot; |
+|align=&quot;center&quot; colspan=&quot;4&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+rab:oof
+|align=&quot;center&quot; colspan=&quot;9&quot; |
+
+|}
+
+
+
+==UNIDENTIFIED GLOBAL TARGETED==
+
+''Description:'' A global subref definition. Annotates a span over tokens on the targeted layer (morphological or lexical) with the annotation key and value from any line that has been declared a potential subref annotation line (via Pepper properties).
+
+''Type:'' '''org.corpus_tools.peppermodules.toolbox.text.data.SubrefDefinition.SUBREF_TYPE.UNIDENTIFIED_GLOBAL_TARGETED'''
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref marker} {token marker} {from} {to}
+\\{subref annotation marker} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\subref tx 1 4
+\\foo bar
+\\rab oof&lt;/pre&gt;
+''Description:''
+
+Annotates a span over the 2nd to 5th token on the target tokenization layer (here, the lexical layer) with the annotations from all specified subref annotations markers.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | '''t2'''
+|align=&quot;center&quot;  colspan=&quot;3&quot; | '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| t2
+|align=&quot;center&quot;| t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot;|
+
+|align=&quot;center&quot; colspan=&quot;7&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+rab:oof
+|align=&quot;center&quot; colspan=&quot;6&quot;|
+
+|}
+
+
+==IDENTIFIED GLOBAL==
+
+''Description:'' A global subref definition. Defines a span over morphological tokens (if they exist, else lexical tokens) and assigns it an identifier. The span will be annotated with the annotation key and value from any line that has been declared a potential subref annotation line (via Pepper properties), and calls the span identifier.
+
+''Type:'' '''org.corpus_tools.peppermodules.toolbox.text.data.SubrefDefinition.SUBREF_TYPE.IDENTIFIED_GLOBAL'''
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref marker} {subref identifier} {from} {to}
+\\{subref annotation marker} {subref identifier} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\subref def 1 4
+\\foo def bar
+\\rab def oof&lt;/pre&gt;
+''Description:''
+
+Annotates a span over the 2nd to 5th morphological tokens with the annotations from all specified subref annotation markers which also specify the defined target span via its first argument, if a morphological layer exists, else annotates a span over lexical tokens 2–5.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | t2
+|align=&quot;center&quot; colspan=&quot;3&quot; | t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| '''t2'''
+|align=&quot;center&quot;| '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot;|
+
+|align=&quot;center&quot; colspan=&quot;4&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+rab:oof
+|align=&quot;center&quot; colspan=&quot;9&quot; |
+
+|}
+
+
+==IDENTIFIED GLOBAL TARGETED==
+
+''Description:'' A global subref definition. Defines a span over tokens on the targeted layer (morphological or lexical) and assigns it an identifier. The span will be annotated with the annotation key and value from any line that has been declared a potential subref annotation line (via Pepper properties), and calls the span identifier.
+
+''Type:'' '''org.corpus_tools.peppermodules.toolbox.text.data.SubrefDefinition.SUBREF_TYPE.IDENTIFIED_GLOBAL_TARGETED'''
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref marker} {subref identifier} {token marker} {from} {to}
+\\{subref annotation marker} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\subref def tx 1 4
+\\foo def bar
+\\rab def oof&lt;/pre&gt;
+''Description:''
+
+Annotates a span over the 2nd to 5th token on the target tokenization layer (here: the lexical layer) with the annotations from all specified subref annotation markers which also specifiy the defined target span via its first argument.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | '''t2'''
+|align=&quot;center&quot; colspan=&quot;&quot;3 | '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| t2
+|align=&quot;center&quot;| t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot;|
+
+|align=&quot;center&quot; colspan=&quot;7&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+rab:oof
+|align=&quot;center&quot; colspan=&quot;6&quot; |
+
+|}
+
+
+==DISCONTINUOUS TARGETED==
+
+''Description:'' A global subref definition. Defines a ''discontinuous'' span over tokens on the targeted layer (morphological or lexical) and assigns it an identifier. The span will be annotated with the annotation key and value from any line that has been declared a potential subref annotation line (via Pepper properties), and calls the span identifier.
+
+''Type:'' '''org.corpus_tools.peppermodules.toolbox.text.data.SubrefDefinition.SUBREF_TYPE.DISCONTINUOUS_TARGETED'''
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref marker} {subref identifier} {token marker} [{from} {to} {from} {to} ..]
+\\{subref annotation marker} {subref identifier} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\subref def tx 1 4 7 9
+\\foo def bar
+\\rab def oof&lt;/pre&gt;
+''Description:''
+
+Annotates a discontinuous span over the 2nd to 5th, and the 8th to 10th token on the target tokenization layer (here: the lexical layer) with the annotations from all specified subref annotation markers which also specifiy the defined target span via its first argument.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | '''t2'''
+|align=&quot;center&quot; colspan=&quot;3&quot; | '''t3'''
+|align=&quot;center&quot;| '''t4'''
+|align=&quot;center&quot;| '''t5'''
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| '''t8'''
+|align=&quot;center&quot;| '''t9'''
+|align=&quot;center&quot;| '''t10'''
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| t2
+|align=&quot;center&quot;| t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot;|
+
+|align=&quot;center&quot; colspan=&quot;7&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+rab:oof
+|align=&quot;center&quot; colspan=&quot;3&quot; |
+
+|align=&quot;center&quot; colspan=&quot;3&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+rab:oof
+|}
+
+
+==FULL REF ANNOTATION==
+
+''Description:'' Any annotation on any line that has been declared a potential subref annotation line (via Pepper properties), when no subrefs have been defined for this reference.
+
+''Type:'' No specific implementation
+
+''Pattern:''
+
+&lt;pre&gt;\\{subref annotation marker} {annotation}&lt;/pre&gt;
+''Example:''
+
+&lt;pre&gt;\\foo bar&lt;/pre&gt;
+''Description:''
+
+Annotates the complete ref span with the annotations from all specified subref annotation markers if no subref definition exists, and the first argument is not an index.
+
+''Visualization'':
+
+{| class=&quot;wikitable&quot;
+| '''tx'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot; colspan=&quot;2&quot; | t2
+|align=&quot;center&quot; colspan=&quot;3&quot; | t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot; colspan=&quot;2&quot; | t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|-
+| '''mb'''
+|align=&quot;center&quot;| t1
+|align=&quot;center&quot;| t2
+|align=&quot;center&quot;| t3
+|align=&quot;center&quot;| t4
+|align=&quot;center&quot;| t5
+|align=&quot;center&quot;| t6
+|align=&quot;center&quot;| t7
+|align=&quot;center&quot;| t8
+|align=&quot;center&quot;| t9
+|align=&quot;center&quot;| t10
+|align=&quot;center&quot;| t11
+|align=&quot;center&quot;| t12
+|align=&quot;center&quot;| t13
+|align=&quot;center&quot;| t14
+|-
+| '''span'''
+|align=&quot;center&quot; colspan=&quot;14&quot; style=&quot;background-color:lightgray;&quot; | foo:bar
+|}
+
+
+-----
+
+'''Legend:'''
+
+* ''subref annotation marker'': A marker specifiying an annotation layer, defined by the annotation key, which can annotate a subref. Note that these markers must be pre-defined for conversion, cf. [[#conversion|Conversion]].
+* ''from''/''to'': The indices defining the token span (both values are inclusive). Note that {from} and {to} are indexed starting at &lt;code&gt;0&lt;/code&gt;, i.e., the first token has index &lt;code&gt;0&lt;/code&gt;, the second token has index &lt;code&gt;1&lt;/code&gt;, etc.
+* ''annotation'': The annotation value.
+* ''token marker'': The marker corresponding to the tokenization layer. Can only be the marker for a line that is being tokenized, i.e., the ''lexical'' (&amp;quot;text&amp;quot;) line (default: &lt;code&gt;tx&lt;/code&gt;) or the ''morphological'' (&amp;quot;gloss&amp;quot;) line (default: &lt;code&gt;mb&lt;/code&gt;). If other token markers are used, they must be pre-specified for conversion, cf. [[#conversion|Conversion]].
+* ''subref marker'': The marker for lines specifying subrefs (default: &lt;code&gt;subref&lt;/code&gt;).
+* ''subref identifier'': A unique identifier string (unchecked) for the subref span, spanning tokens from {from} to {to}. It is used to link an annotation line with a subref definition line.
+
+= Conversion =
+
+When using the Toolbox text importer module for [http://corpus-tools.org/pepper/ ''Pepper''], it is necessary to set up subref mapping in a properties file (details in the [http://corpus-tools.org/pepper/userGuide.html ''Pepper'' documentation]). The property name for defining the name of the ''subref marker'' is &lt;code&gt;subRefDefinitionMarker&lt;/code&gt;. The property name for defining the annotation lines which can be used for subref annotation is &lt;code&gt;subRefAnnotationMarkers&lt;/code&gt;.
+
+In a ''Pepper workflow file'', they would be used, for example, as in the following snippet.
+
+&lt;pre&gt;&amp;lt;property key=&amp;quot;subRefDefinitionMarker&amp;quot;&amp;gt;unitref&amp;lt;/property&amp;gt;
+&amp;lt;property key=&amp;quot;subRefAnnotationMarkers&amp;quot;&amp;gt;foo, rab&amp;lt;/property&amp;gt;&lt;/pre&gt;</text>
+      <sha1>nlyiizeyx809nvntrlf3f4bzkp3qmly</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Clause types</title>
+    <ns>0</ns>
+    <id>18</id>
+    <revision>
+      <id>712</id>
+      <parentid>710</parentid>
+      <timestamp>2019-03-18T14:36:17Z</timestamp>
+      <contributor>
+        <username>Tjukaann</username>
+        <id>11</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="13166">This page explains the values associated with the category {{Tagname|clause}} – see also the [[Tagset|tagset]].
+
+*The tags for main clause subtypes are {{Tagname|assertion}}, {{Tagname|question}}, and {{Tagname|directive}}.
+*The tags embedded clause subtypes are {{Tagname|proposition}} (complement clauses), {{Tagname|conditional}}, {{Tagname|e.question}} (embedded question), {{Tagname|temporal}},  {{Tagname|adverbial}} and {{Tagname|attributive}}.
+
+
+==Main clauses==
+This section describes different clause types. Clause types are classified according to the speech act they are canonically assigned to. For example, a question is a clause type that is typically used as a request for information; and imperative is a clause type that is canonically used as a request for a certain action. However, the same clause type can be used to perform a variety of speech acts. For example, the assertion &quot;the window is open, it is awfully cold&quot; can easily be taken as a request to close the window, or for permission for doing so, rather than an action-neutral piece of information.
+
+We tag clause types irrespective of their pragmatic impact. This means that a sentence like ''Would it kill you to open the window?'' is a question, irrespective of its directive force. ''You have eaten enough!'' is an assertion, despite the exclamation mark and the obvious intent to evoke an action.
+
+===Assertions===
+An assertive main clause provides a piece of information that the recipient can then agree or disagree with.  Assertive main clauses are always finite. They can refer to various temporal and modal domains. Some examples from English:
+
+# ''Mary had a little lamb.''
+# ''It might be raining in London.''
+# ''It will rain tomorrow.''
+
+Some examples from Daakaka, with different markers highlighted:
+
+{| class=&quot;interlinear&quot;
+|-
+! '''mwe'''  || liye || an    ||    bosi
+|-
+| REAL || take || 3S.POSS ||  copra.chisel
+|-
+| colspan=&quot;4&quot; | &quot;He took his copra chisel.&quot; {{Example|Daakaka|0139}}
+|}
+
+{| class=&quot;interlinear&quot;
+|-  
+! yene || ka ||   na  ||  ''' -p'''   ||   sekan    ||    myane || ngok
+|-
+| now ||  MOD||  1S   ||  -POT ||  shake.hands || with  || 2S
+|-
+|colspan=&quot;7&quot; | &quot;now I will shake hands with you&quot; {{Example|Daakaka|0350}}
+|}
+
+Assertive clauses can be negated:
+
+{| class=&quot;interlinear&quot;
+|-
+! nge ||  '''to'''  ||  pesis  ||  yen ||  booli || lee,||  nge  || ma  ||   pesis  ||  yen ||  bweang   ||      ane  ||   leevyo
+|-
+| 3S  ||  REAL.NEG || lay.egg || in  ||  hole  || tree || 3S  ||  REAL || lay.egg || in  ||  treefern.hair  ||TRANS  ||tree.fern
+|-
+| colspan=&quot;13&quot; |  It doesn't lay its eggs into a hole in a tree, it lays them into the hairy parts of the treefern. {{Example|Daakaka|0578}}
+|}
+
+Note that in a complex sentence such as a conditional or temporal clause, the matrix clause is also to be classified as an {{Tagname|assertion}}. This would, for example, apply to the bracketed clause in ''if it was dark [we wouldn't be able to see you]''.
+
+===Questions===
+A question is a clause type canonically associated with a request for information. Questions can be further divided into '''polarity questions''', '''content questions''' and '''alternative questions'''. A polarity question can be answered by ''yes'' or ''no'' and equivalent expressions:
+
+{| class=&quot;interlinear&quot;
+|-
+!ko ||    -'''m''' ||    kuowilye || Wamili?
+|-
+| 2S  ||  -REAL || know  ||   NAME
+|-
+|do || you || know || Wamili? (DAA.4139)
+|}
+
+*A polarity question can be positive, as above, or negative:
+
+{|class=&quot;interlinear&quot;
+|-
+! mwe ||  ka, || ka  || '''to'''  || ongane|| na  ||  na  ||  -m  ||   ka-ka?
+|-
+| REAL || say || 2D  ||  NEG || hear ||   COMP||  1S ||    -REAL || REDUP-say
+|-
+| colspan=&quot;9&quot; | He said, did you not hear what I said? (DAA.4515)
+|}
+
+*A content question is characterized by an interrogative word such as ''who'' or ''when''.
+
+{| class=&quot;interlinear&quot;
+|-
+! mwe  ||  nok  ||   te  ||   ka, || e, ||   ko ||    -'''m'''     || edi ||  wotop ||      en   ||     -tak     ||   '''arve'''?
+|-
+| REAL || finish||  DISC||  say||  hey||   2S ||    -REAL || take || breadfruit||  DET.DEM || -DEM.PROX || where
+|-
+| colspan=&quot;14&quot; | then he said, hey where did you get that breadfruit from? (DAA.1208)
+|}
+
+{| class=&quot;interlinear&quot;
+|-
+! Ko   -m     penin    seaa       ada   vis    sa  [ada   wet       kuku  '''sewe'''] te    ka   da    -p     gene yuk?
+|-
+| 2S    -REAL roast.PL RES.every 1D.IN banana TOP 1D.IN only.then grate what DISC MOD 1D.IN -IRR  make laplap
+|-
+| You have roasted all our bananas, [what are we going to grate] to make laplap? (DAA..5316)
+|}
+
+*An alternative question explicitly names two or more alternative answers to choose from as in ''Would you like coffee, tea, or hot chocolate?''
+
+===Directives===
+Directives are clauses which are canonically used to express a request for someone to do something. They may minimally consist of only an infinite verb as in ''Come!'', but may have a more complex form as in the following example:
+
+{| class=&quot;interlinear&quot;
+|-
+! naana || ko  ||  '''-p'''    || gene ||apyang|| tuswa
+|-
+| mother|| 2S ||   -IRR || make ||fire ||  one
+|-
+|colspan=&quot;6&quot;| Mother, make a fire! (DAA.0325)
+|}
+
+Directives are typically requests to a second person, even though the subject may be a first or third person:
+
+{| class=&quot;interlinear&quot;
+|-
+! Ko  ||  -p   ||  pwer,|| a  ||  nye || '''na'''  ||  '''-p'''  ||   vyan.
+|-
+| 2S  ||  -IRR || stay||  and || 1S ||  1S||    -IRR || go
+|-
+| colspan=&quot;15&quot; | you stay here and I will go.' (lit. &quot;and me, let me go&quot;) (DAA.5324)
+|}
+
+Directives can be affirmative as well as negative. Negative directives are also called '''prohibitives'''. An example is given below:
+
+{| class=&quot;interlinear&quot;
+|-
+! Mwelip,  || saka    ||   ko   ||   -n    ||      vyan  ||  etes
+|-
+| NAME   ||  MOD.NEG  || 2S  ||    -NEG.POT ||  go   ||  at.the.sea
+|-
+| colspan=&quot;15&quot; | Mwelip, don't go to the sea (DAA.3403)
+|}
+
+===Other main clauses===
+*Optatives: these clauses express a wish for something to happen that is not a request to someone specific as in ''May the force be with you!''.
+*Expressives: these clauses express a strong, subjective feeling as in ''What a beautiful day!'' or ''Such a shame!''.
+
+...
+
+==Embedded clauses==
+===Complement clauses===
+Complement clauses are embedded clauses that function as the argument of a subordinating verb, such as ''want'', ''think'', ''say'' or ''know''. 
+====Propositions====
+Complement clauses can express a {{Tagname|proposition}}, as in the following example:
+{| class=&quot;interlinear&quot;
+|-
+! ka  ||  te   ||  sikya  ||  webung || lim ||  te   ||  mwe  ||  '''kuowilye'''||  na  ||   vis  ||   '''mw'''-    i  ||   myen
+|-
+| MOD|| DIST ||touch  || day   || five|| DISC|| REAL|| know ||    COMP|| banana|| REAL-|| COP|| ripe
+|-
+| colspan=&quot;15&quot; | when four days had passed, he knew that the bananas were ripe. (DAA.4777)
+|}
+
+
+Non-finite or future-oriented non-veridical complement clauses are also tagged as {{Tagname|proposition}}s:
+{| class=&quot;interlinear&quot;
+|-
+! mwe ||  ka || na  ||  -m  ||   '''dimyane''' ||ka  || na ||   '''w'''-  ||  esi
+|-
+| REAL ||say|| 1S   || -REAL ||want  ||   MOD|| 1S  ||  IRR- ||see
+|-
+| colspan=&quot;15&quot;| she said, I want to see her (DAA.3816)
+|}
+
+====Questions====
+Some subordinating verbs take {{Tagname|questions}} as complement clauses:
+{| class=&quot;interlinear&quot;
+|-
+! na  ||  to ||  '''kuowilye''' ||dom || '''sewe''' ||sa  || myaop  || mwe  || t'op
+|-
+| 1S  ||   NEG  ||know  ||     year  ||what || TOP  ||volcano || REAL  ||break ||
+|-
+| colspan=&quot;15&quot; | I don't know in which year the volcano erupted (DAA.0923)
+|}
+
+Note that an embedded question may contain a complementizer:
+{| class=&quot;interlinear&quot;
+|-
+! mwe ||  nok  ||  te  ||  ma ||   dimyane ||ka ||  we ||   kuowilye|| '''na'''  ||  si || sa ||  bwe ||  tee-||   teepuon ||apyang ||en ||  -te
+|-
+| REAL ||finish ||DISC|| REAL|| want ||    MOD|| IRR || know ||     COMP|| who|| TOP ||CONT ||REDUP-|| guard ||    fire   || 	DEM|| -DEM.MD||
+|-
+| colspan=&quot;18&quot; | then he wanted to know who was guarding this fire. (DAA.3599)
+|}
+
+Also note that Daakaka has a specific TAMP-marker for embedded polarity clauses:
+{| class=&quot;interlinear&quot;
+|-
+!da=p || vyan||  tee-esi||  s-ok||  karton||  yan||  plen||  ka || '''doo'''||  me
+|-
+|	1D=POT||  go || look-try || CL3-1S.POSS||  package||  on || plane || MOD.COMP||  DOO||  come
+|-
+| colspan=&quot;15&quot;|	let's see whether or not a package for me has arrived on the plane
+|}
+
+===Adverbial clauses===
+An adverbial clause modifies the event or proposition expressed by the main clause. Within this category, we want to label {{Tagname|temporal}} clauses, {{Tagname|conditional}} clauses and {{Tagname|purpose}} clauses specifically. Other adverbial clauses simply receive the value {{Tagname|adverbial}}.
+
+
+
+====Temporal clauses====
+The label {{Tagname|conditional}} is reserved for the protasis (antecedent) of conditional sentences. The apodosis (consequent) can be labelled as an {{Tagname|assertion}}.
+A temporal clause describes the moment or period of time during which the event expressed by the main clause takes place. A temporal clause can be episodic and refer to only a single event:
+
+{| class=&quot;interlinear&quot;
+|-
+! ['''bili'''  || '''na'''   ||   ya   ||   -m    ||   du   ||  pweli ||  map,]    ||    te   ||   vyanten swa  || mwe  ||   nii  ||   pwer  || yen   || booli  || lee
+|-
+| time ||  COMP || 3P ||    -REAL||  stay || bake ||  T.chestnut || DISC||  man  ||    one REAL || hide ||  stay || in  ||  hole ||  tree
+|-
+|colspan=&quot;15&quot; | When they were baking chestnuts, someone was hiding in the hole of a tree (DAA.0163)
+|}
+
+Temporal clauses can also be generic and refer to a series of potentially recurring events:
+
+{| class=&quot;interlinear&quot;
+|-
+! [ka ||  ko  ||  -'''t'''  ||   unun ||        or,]  || te  ||  ko  ||  -m  ||   tilya ye ||  -tye ||  te  ||  tung   ||     -ane
+|-
+|   MOD  || 2S    - || DIST || clear.garden || place  || DISC  || 2S    - || REAL || take || leaf || -of.it  || DISC lay.fire.to|| -TRANS 
+|-
+| colspan=&quot;15&quot; | When you clear the bush, you take the leaves and put them on fire (DAA.2846)
+|}
+
+In addition to the TAMP markers heading a temporal clause, we also want to pay attention to the complementizer. In Daakaka, there are two main structures for temporal clauses. One structure involves the complementizer ''ka'' in combination with the distal marker, as in DAA.2846 above.
+
+{| class=&quot;interlinear&quot;
+|-
+!['''bili''' || '''na'''    || luu  ||  -sye   ||    '''te'''    || mwelili  || ngabak]   || te    ya  ||   -m    ||  takote
+|-
+| time  || COMP || root  || -3S.POSS  ||DIST  ||be.small  ||still   ||  DISC  ||3P    || -REAL || cut.loose
+|-
+| colspan=&quot;15&quot; | When the roots are still small, they cut them (DAA.2895)
+|}
+
+====Conditional clauses====
+The label {{Tagname|conditional}} is reserved for the protasis (antecedent) of conditional sentences. The apodosis (consequent) can be labelled as an {{Tagname|assertion}}.
+Conditional clauses come with various temporal, aspectual and modal properties. In the Western tradition, conditional clauses are typically divided into indicative and counterfactual ones. I would suggest to replace the term ''indicative'' with ''possible'' for our purposes, since we are not dealing with indicative-subjunctive systems here. An example for a '''possible''' conditional would be the following sentence:
+
+{| class=&quot;interlinear&quot;
+!'''madai''' || ku || dup- || lau || kabo || ye || wane || si || unui || - || he- || mate || -go
+|-
+|lest/otherwise || 2SG.SUBJ || DUP- || go || will/then || 3SG.SUBJ || say || 3PL.SUBJ || catch || - || CAUS- || dead/die || -2SG.OBJ
+|-
+| colspan=&quot;20&quot;| &quot;if you keep on going (to them)&quot;, he said, &quot;they will get hold of you and kill you&quot;, {{Example|Saliba|BudoiNualele_01CY_0523}}
+|}
+
+In a '''counterfactual''' conditional, the speaker assumes that the proposition expressed in the antecedent is false in the actual world. The temporal orientation of counterfactual conditionals is typically towards the past or present, as in the following example:
+
+{| class=&quot;interlinear&quot;
+|-
+!['''aga''' || '''hesau''' || ya || ginauli || '''kabo''' || ku || kita] || na || nige || hesau || ya || ginauli
+|-
+|if || a || 1SG.SUBJ || make || will/then || 2SG.SUBJ || see || and.then || NEG || a || 1SG.SUBJ || make
+|-
+| colspan=&quot;20&quot;| If I had made one you could see it, but I didn't make one. {{Example|Saliba|Nogi_01AQ_0097}}
+|}
+
+====Others====
+
+Other clauses which are neither complements nor attributes will be labeled as {{Tagname|adverbial}}. This comprises, for example, causal clauses such as ''because it was late'' and concessive clauses such as ''even though it was dark''.
+
+Note that this category also includes purpose clauses. Purpose clauses indicate the purpose or goal of an action. In many languages, purpose clauses are relatively unmarked, they may come without a complementizer and without a finite verb form (''I went to Mary's office [to ask her for advice]''). They differ from {{Tagname|event}} complement clauses such as ''I wanted to ask for her advice'' in that the verb does not require a complement.
+
+===Attributive clauses===
+Relative clauses modifying a noun phrase, as in ''the dog [that bit me]'', will be labelled as {{Tagname|attributive}}.</text>
+      <sha1>gr241nh0a95jmahlawe2qg54ybmruy4</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Context Overview</title>
+    <ns>0</ns>
+    <id>53</id>
+    <redirect title="Queries" />
+    <revision>
+      <id>531</id>
+      <timestamp>2016-12-13T09:54:54Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>Princevk verschob die Seite [[Context Overview]] nach [[Queries]]: better title</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="26">#WEITERLEITUNG [[Queries]]</text>
+      <sha1>figg57ufxzyfmknnsvfmr0pvcyc31pg</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Daa Realis 4873</title>
+    <ns>0</ns>
+    <id>9</id>
+    <revision>
+      <id>23</id>
+      <parentid>22</parentid>
+      <timestamp>2016-03-24T09:52:10Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="417">\ref .4873
+
+\tx yem          du   mwe   gete          vyan te    webung swa
+
+\mb ye    -m     du   mwe   ge   -te      vyan te    webung swa
+
+\ge 3d    -$real stay $real like -$dem.md go   $disc day    one
+
+\ps s.pron -tam   v    v.pre v    -***     v    disc  n      num
+
+\ft they lived like this, then one day
+
+[[Category: Daakaka]]
+[[Category: Positive Assertions]]
+[[Category: Imperfective]]
+[[Category: Fiction]]</text>
+      <sha1>003ap95px96x10sg7w37xz7oyodrhwj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Daakaka</title>
+    <ns>0</ns>
+    <id>27</id>
+    <revision>
+      <id>544</id>
+      <parentid>543</parentid>
+      <timestamp>2017-02-15T13:11:04Z</timestamp>
+      <contributor>
+        <username>Butzbene</username>
+        <id>8</id>
+      </contributor>
+      <comment>/* Ongoing Grammaticalization: The Case of Daakaka Verbs, Auxiliaries, and TMA Markers */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="7919">==Adverbials==
+===Temporal adverbials===
+
+It appears that temporal adverbials operate differently in different languages. English ''yesterday'' generally refers to the day before the day of the utterance, it cannot simply mean ''the day before''. By contrast, Daakaka ''pelyen'' (&quot;tomorrow&quot;) and similar expressions are interpreted as relative to the time of utterance by default, but they can easily be shifted to a different, contextually given, time.
+
+{| class=&quot;interlinear&quot; 
+|-
+!'''pelyen''' || an || ka || ya-t || mwe||  vyan||  tee||  esi||  too, || te || esi || or || mwe || luk||  tetes 
+ |-
+ | tomorrow || DEF||  MOD || 3P-DIST||  REAL || go||  look||  see||  garden||  DISC || see || bush||  REAL||  grow || again 
+|-
+|colspan=&quot;15&quot; | the next day when they went to see the garden, they saw that the plants had regrown. {{Example |Daakaka|3071}}
+|}
+
+==Ongoing Grammaticalization: The Case of Daakaka Verbs, Auxiliaries, and TMA Markers==
+Sabrina Demirović, Benni Butz
+
+Daakaka verbs can be preceded by other verbs, auxiliaries and TMA markers, among others. The first case constitutes serial verb constructions, one type of the serial predicate constructions which Daakaka makes extensive use of (including verb-verb, verb-adjective, etc). Such constructions can e.g. specify the direction of a movement (see below), but since the choice of the predicates in a serial construction is relatively unconstricted, the possibilities of semantic expression are widely varied. Auxiliaries and TMA markers, on the other hand, both respectively form a highly restricted closed class of modifiers with generally aspectual and modal semantics.
+Within this part of Daakaka grammar, we looked at the verb ''pwer'' &quot;to stay, be&quot; and its phonologically reduced forms, ''pwe'' and ''bwe''. According to von Prince (2015) , both ''pwer'' and ''pwe'' occur as a full verb and as auxiliaries, and ''bwe'' as a phonological contraction of the realis TMA marker ''mwe'' and ''pwe''. However, the case may be more complex than this: We found some evidence that ''bwe'' might in fact be on its way to becoming a new TMA marker, and the distribution of ''pwer'' and ''pwe'' in full verbal and auxiliary position might also not be completely arbitrary.
+
+===Serial Verb Constructions===
+
+In the following example, two verbs are serialized, one expressing direction on the vertical axis and the other specifying direction relative to the speaker.
+
+{| class=&quot;interlinear&quot; 
+|-
+!te || ya=m || du || tas || milye || mwe || '''seling''' || '''me'''
+ |-
+ | DISC || 3p=REAL || stay || sit || on.top || REAL || descend || come
+|-
+|colspan=&quot;15&quot; | So they stayed up [on the hill] and he went down {{Example |Daakaka|0138}}
+|}
+
+===Auxiliaries===
+
+Below, the optional auxiliary &quot;mas&quot; modifies the following verb, expressing its necessity.
+
+{| class=&quot;interlinear&quot; 
+|-
+!kuli || yene || ka || te || esi || puskat || te  || ka || we || '''mas''' || óte || puskat
+ |-
+ | dog || now || MOD || PAST || see || cat || DISC || MOD || IRR || must || hunt || cat
+|-
+|colspan=&quot;15&quot; | Today, when the dog sees the cat, it will always chase the cat. {{Example |Daakaka|0916}}
+|}
+
+===TMA Markers===
+
+TMA markers occur in two kinds of phonological forms: As consonantal clitics or as monosyllabic words. They only assume the second form if they cannot cliticise to either of the words around them for morphosyntactic or phonological reasons. Compare the clitisation to the preceding morpheme
+
+{| class=&quot;interlinear&quot; 
+|-
+!te || ka || ka: || na='''m''' || ka || ki='''p''' || tas  || tene || nye || te || ki || to || tas
+ |-
+ | DISC || say || say || 1s-REAL || say || 2p-IRR || sit || wait || 1s || DISC || 2p || NEG || sit
+|-
+|colspan=&quot;15&quot; | He said: I told you to wait, but you didn't wait. {{Example |Daakaka|0152}}
+|}
+
+to the clitisation to the following morpheme
+
+{| class=&quot;interlinear&quot; 
+|-
+!ye || '''mw'''=i || yaapu || melumlum || swa
+ |-
+ | 3pc || REAL=COP || big.man || quiet || one
+|-
+|colspan=&quot;15&quot; | they were calm men {{Example |Daakaka|0002}}
+|}
+
+and the monosyllabic form due to lack of surrounding host morphemes:
+
+{| class=&quot;interlinear&quot; 
+|-
+!te || ya=m || du || tas || milye || '''mwe''' || seling || me
+ |-
+ | DISC || 3p=REAL || stay || sit || on.top || REAL || descend || come
+|-
+|colspan=&quot;15&quot; | So they stayed up [on the hill] and he went down {{Example |Daakaka|0138}}
+|}
+
+Some TMA markers only occur as monosyllabic words.
+
+===''pwer'', ''pwe'' and ''bwe'': A Case of Ongoing Grammaticalization?===
+
+The verb ''pwer'' &quot;to stay, be&quot; can be a part of a serial predicate construction, both in initial and non-initial position. It can, however, also occur as an auxiliary, along with its phonologically reduced form ''pwe''. They seem to be generally interchangeble, but there might be a preference of the form ''pwe'' when occurring as an auxiliary.
+
+{| class=&quot;interlinear&quot; 
+|-
+!a || '''pwe''' || kolir || ane || bwye || ente || kyun || te || yaapu || ka || we || kuone || nge
+ |-
+ | and || CONT || sing || TRANS || song || this || just || DISC || god || MOD || IRR || help || 3s
+|-
+|colspan=&quot;15&quot; | She was singing this song and God would help him {{Example |Daakaka|0969}}
+|}
+
+When &quot;pwe&quot; occurs after the monosyllabic TMA marker &quot;mwe&quot;, they contract into the phonological form &quot;bwe&quot; [ᵐbʷɛ]. (Voiced plosives are prenasalized in Daakaka, hence the sequence [mʷɛ pʷɛ] is phonetically close to [ᵐbʷɛ].)
+
+{| class=&quot;interlinear&quot; 
+|-
+!te || nat-eya || '''bwe''' || deng
+ |-
+ | DISC || child=3d.POSS || REAL;CONT || cry
+|-
+|colspan=&quot;15&quot; | their child was crying. {{Example |Daakaka|3016}}
+|}
+
+Since ''bwe'' has to occur in a position that is not distinguishable from the position of the TMA marker on the syntactic surface, it is possible to view ''bwe'' itself as a TMA marker. In any case, ''pwer'' is undergoing phonological and semantic bleaching, which suggests that some new grammatical formative might be taking shape. Even though this has to be further investigated on morphosyntactic grounds, there are several reasons to believe that ''bwe'' is developing some independence from ''pwer/pwe''.
+*there seem to be no other cases of morphemes merging phonologically in the way that gives rise to ''bwe''
+*''pwer'' is one half of one of the many pairs of synonymous Daakaka verbs in which one (in this case ''pwer'') can only occur with singular referents and the other with non-singular referents. It's non-singular counterpart is ''du'', which occurs only with non-singular referents. Since they are supposed to be synonymous apart from this restriction, we would expect them to behave similarly if ''pwe'' and ''bwe'' are not really distinct morphemes from ''pwer''. However, ''du'' seems to behave differently both phonologically and morphosyntactically: It shows no signs of being phonologically reduced or contracting with ''mwe''; and, while there is no occurrence of ''mwe'' occurring in its non-syllabic clitic form with preverbal ''pwe'', it does so with ''du'' quite frequently, though there is no apparent reason why ''pwe'' should exert a stronger gravity on the TMA marker than ''du''. Compare the following two examples, where we find ''ye=m du'' but not ''na=m pwe''; instead, ''na bwe'' is used.
+
+{| class=&quot;interlinear&quot; 
+|-
+!'''ye=m''' || '''du''' || oko || melipro || nyoo || ma || ge-te || kyun
+ |-
+ | 3pc-REAL || stay || walk || lax || 3p || REAL || be.like-DEM.MD || just
+|-
+|colspan=&quot;15&quot; | they just strolled leisurely like this {{Example |Daakaka|0004}}
+|}
+
+{| class=&quot;interlinear&quot; 
+|-
+!ko=m || kuowilye || na || '''na''' || '''bwe''' || ka || te
+ |-
+ | 2s-REAL || know || COMP || 1s || CONT || say || DISC
+|-
+|colspan=&quot;15&quot; | You know what I'm saying? {{Example |Daakaka|0018}}
+|}
+
+==Daakaka examples==
+A list of examples from the language in this wiki, with suggested tags, can be found here:
+[[Daakaka examples]]
+
+==Glosses==
+A list of abbreviated glosses with their meanings can be found here: [[Daakaka glosses]]</text>
+      <sha1>b3rm8p917kjthlpdandfmcuxbecdjq9</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Daakaka examples</title>
+    <ns>0</ns>
+    <id>26</id>
+    <revision>
+      <id>542</id>
+      <parentid>143</parentid>
+      <timestamp>2017-02-15T13:08:13Z</timestamp>
+      <contributor>
+        <username>Butzbene</username>
+        <id>8</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="3975">==3071==
+
+{| class=&quot;interlinear&quot; 
+|-
+!'''pelyen''' || '''an''' || ka || ya-t || mwe||  vyan||  tee||  esi||  too, || te || esi || or || mwe || luk||  tetes 
+ |-
+ | tomorrow || DEF||  MOD || 3P-DIST||  REAL || go||  look||  see||  garden||  DISC || see || bush||  REAL||  grow || again 
+|-
+|colspan=&quot;15&quot; | the next day, when they went to see the garden, they saw that the plants had regrown. {{Example |Daakaka|3071}}
+|}
+
+{| class=&quot;wikitable&quot;
+|-
+| Clause type || main, assertion 
+|-
+| Temporal reference || past
+|-
+| Modal domain || actual
+|-
+| Event structure || perfective
+|-
+|Polarity || positive
+|-
+|Reported speech || no
+|}
+
+==0139==
+
+{| class=&quot;interlinear&quot;
+|-
+! '''mwe'''  || liye || an    ||    bosi
+|-
+| REAL || take || 3S.POSS ||  copra.chisel
+|-
+| colspan=&quot;4&quot; | &quot;He took his copra chisel.&quot; {{Example|Daakaka|0139}}
+|}
+
+{| class=&quot;wikitable&quot;
+|-
+| Clause type || main, assertion 
+|-
+| Temporal reference || past
+|-
+| Modal domain || actual
+|-
+| Event structure || perfective
+|-
+|Polarity || positive
+|-
+|Reported speech || no
+|}
+==0350==
+
+{| class=&quot;interlinear&quot;
+|-  
+! yene || ka ||   na  ||  ''' -p'''   ||   sekan    ||    myane || ngok
+|-
+| now ||  MOD||  1S   ||  -POT ||  shake.hands || with  || 2S
+|-
+|colspan=&quot;7&quot; | &quot;now I will shake hands with you&quot; {{Example|Daakaka|0350}}
+|}
+
+{| class=&quot;wikitable&quot;
+|-
+| Clause type || main, assertion 
+|-
+| Temporal reference || future
+|-
+| Modal domain || possible
+|-
+| Event structure || telic
+|-
+|Polarity || positive
+|-
+|Reported speech || yes
+|}
+
+==0578==
+
+{| class=&quot;interlinear&quot;
+|-
+! nge ||  '''to'''  ||  pesis  ||  yen ||  booli || lee,||  nge  || ma  ||   pesis  ||  yen ||  bweang   ||      ane  ||   leevyo
+|-
+| 3S  ||  REAL.NEG || lay.egg || in  ||  hole  || tree || 3S  ||  REAL || lay.egg || in  ||  treefern.hair  ||TRANS  ||tree.fern
+|-
+| colspan=&quot;13&quot; |  It doesn't lay its eggs into a hole in a tree, it lays them into the hairy parts of the treefern. {{Example|Daakaka|0578}}
+|}
+
+{| class=&quot;wikitable&quot;
+|-
+| Clause type || main, assertion 
+|-
+| Temporal reference || present
+|-
+| Modal domain || actual
+|-
+| Event structure || generic
+|-
+|Polarity || negative
+|-
+|Reported speech || no
+|}
+
+==Ongoing Grammaticalization: The Case of Daakaka Verbs, Auxiliaries, and TMA Markers==
+===Serial verb construction===
+{| class=&quot;interlinear&quot; 
+|-
+!te || ya=m || du || tas || milye || mwe || '''seling''' || '''me'''
+ |-
+ | DISC || 3p=REAL || stay || sit || on.top || REAL || descend || come
+|-
+|colspan=&quot;15&quot; | So they stayed up [on the hill] and he went down {{Example |Daakaka|0138}}
+|}
+
+===Auxiliary===
+{| class=&quot;interlinear&quot; 
+|-
+!kuli || yene || ka || te || esi || puskat || te  || ka || we || '''mas''' || óte || puskat
+ |-
+ | dog || now || MOD || PAST || see || cat || DISC || MOD || IRR || must || hunt || cat
+|-
+|colspan=&quot;15&quot; | Today, when the dog sees the cat, it will always chase the cat. {{Example |Daakaka|0916}}
+|}
+
+===The TMA marker ''mwe''===
+{| class=&quot;interlinear&quot; 
+|-
+!te || ya=m || du || tas || milye || '''mwe''' || seling || me
+ |-
+ | DISC || 3p=REAL || stay || sit || on.top || REAL || descend || come
+|-
+|colspan=&quot;15&quot; | So they stayed up [on the hill] and he went down {{Example |Daakaka|0138}}
+|}
+
+===The verb ''pwer''===
+{| class=&quot;interlinear&quot; 
+|-
+!ka || ko=p || '''pwer''' || ka || na || vyan || yen || or
+ |-
+ | MOD || 2s=IRR || stay || MOD || 1s || go || in || bush
+|-
+|colspan=&quot;15&quot; | You stay, I will go to the bush {{Example |Daakaka|5382}}
+|}
+
+===Auxiliary ''pwe''===
+{| class=&quot;interlinear&quot; 
+|-
+!a || '''pwe''' || kolir || ane || bwye || ente || kyun || te || yaapu || ka || we || kuone || nge
+ |-
+ | and || CONT || sing || TRANS || song || this || just || DISC || god || MOD || IRR || help || 3s
+|-
+|colspan=&quot;15&quot; | She was singing this song and God would help him {{Example |Daakaka|0969}}
+|}
+
+===''bwe''===
+{| class=&quot;interlinear&quot; 
+|-
+!te || nat-eya || '''bwe''' || deng
+ |-
+ | DISC || child=3d.POSS || REAL;CONT || cry
+|-
+|colspan=&quot;15&quot; | their child was crying. {{Example |Daakaka|3016}}
+|}</text>
+      <sha1>i4t7wpx05k1tmbw6l6zngbk3gtyj1rr</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Dahl questionnaire</title>
+    <ns>0</ns>
+    <id>43</id>
+    <revision>
+      <id>375</id>
+      <parentid>358</parentid>
+      <timestamp>2016-06-03T09:23:59Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="4609">[[The tagset in relation to the SE Dahl questionnaire| Here]] is a page that summarises the relation between the tagset and the South Efate version of the Dahl questionnaire. 
+
+Examples of how the questionnaire relates to the tagset are given below. 
+&lt;ol&gt;
+&lt;li&gt;[Standing in front of a house] The house BE BIG {{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=ongoing | polarity}}&lt;/li&gt;
+&lt;li&gt;[Talking about the house in which the speaker lives (the house is out of sight)] The house BE BIG {{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=ongoing | polarity}}&lt;/li&gt;
+&lt;li&gt;[Talking about a house in which the speaker used to live but which has now been torn down] The house BE BIG
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Talking about a house which the speaker saw for the first time yesterday and doesn't see.now:] The house BE BIG
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Q: What your brother DO right now? (=What activity is he engaged in?) A by someone who can see him] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=6[should be 5 [[Benutzer:Princevk|Kilu]] ([[Benutzer Diskussion:Princevk|Diskussion]])]] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[A: I just talked to my brother on the phone. B: What he do right 
+now? A answers:] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=7] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[A: I went to see my brother yesterday. B: What he DO? (=What activity was he engaged in?)] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=10] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[A: I talked to my brother on the phone yesterday. B: What he DO? (=What activity was he engaged in?)] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C11l] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[A: When you visited your brother yesterday, what he DO after you had dinner? ANSWER:] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event='''completed?''' | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=13] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event='''completed?''' | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Q: What your brother DO if you don't go to see him today, do you think? A:] He WRITE a letter (to me)
+{{Tamp|clause=assertion | reported=no | time=future| mood=possible| event=completed | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Q: What your brother DO when we arrive, do you think? (=What activity will he be engaged in?)] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=future| mood=possible| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=16] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=future| mood=possible| event=ongoing | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Q: What your brother usually DO after breakfast? A:] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=repeated | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=18] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=present| mood=actual| event=repeated | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Q: What your brother usually DO after breakfast last summer? A:] He WRITE letters
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=repeated | polarity}}
+&lt;/li&gt;
+&lt;li&gt;
+[C=20] He WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=past| mood=actual| event=repeated | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Q: What are you planning to do right now? A:] I WRITE letters
+{{Tamp|clause=assertion | reported=no | time=future| mood=possible| event=completed | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[C=22] I WRITE a letter
+{{Tamp|clause=assertion | reported=no | time=future| mood=possible| event=completed | polarity}}
+&lt;/li&gt;
+&lt;li&gt;[Neither A nor B can see B's brother. A: What he DO right now, do you think? (=What activity is he engaged in?)] He WRITE letters (I think so because he does that every day at this time)
+{{Tamp|clause=assertion | reported=no | time=future| mood=possible| event=completed | polarity}}
+&lt;/li&gt;
+&lt;/ol&gt;</text>
+      <sha1>hilsorow6x8dxbrr6lvdh5axvuvg9l3</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Elicitation materials</title>
+    <ns>0</ns>
+    <id>59</id>
+    <revision>
+      <id>702</id>
+      <parentid>701</parentid>
+      <timestamp>2018-10-02T08:08:53Z</timestamp>
+      <contributor>
+        <username>Tjukaann</username>
+        <id>11</id>
+      </contributor>
+      <comment>/* MelaTAMP storyboards */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="2384">In addition to the corpus data we investigate, we also design and use elicitation materials to generate texts containing contexts that are not frequent enough to be reliably attested in the corpus data. We primarily use storyboards as method of elicitations since they provide rich contexts and do not rely much on translation.
+
+
+==MelaTAMP storyboards==
+The storyboards are written in Bislama and the setting is clearly Melanesia. We have translated them into English as well.
+They were created in [https://inkscape.org Inkscape], in SVG format and in LaTeX. We will make the source files available in due course so they can be modified, expanded and adjusted as needed.
+
+The storyboards produced so far are available from Zenodo. They are published under a [https://creativecommons.org/licenses/by/4.0/ cc by 4.0 license]. 
+
+*[http://doi.org/10.5281/zenodo.1230385  Bananas]
+*[http://doi.org/10.5281/zenodo.1231798 Fat pig]
+*[http://doi.org/10.5281/zenodo.1231804 Festival]
+*[http://doi.org/10.5281/zenodo.1231808 Red Yam]
+*[http://doi.org/10.5281/zenodo.1231836 Tomato and Pumpkin]
+*[http://doi.org/10.5281/zenodo.1421237 Garden]
+*[http://doi.org/10.5281/zenodo.1421227 Haircuts]
+*[http://doi.org/10.5281/zenodo.1421185 Making laplap]
+
+==Totem Field Storyboards==
+We translated several stories from the [http://totemfieldstoryboards.org/stories/ TSF site]  into Bislama. Please use the citations included below:
+
+* [[:Datei:Fortune_teller_fn_Bislama.pdf|Fortune teller]] (TFS Working Group (2010). The Fortune Teller. Totem Field Storyboards . Retrieved from http://www.totemfieldstoryboards.org on Jun 27, 2017.)
+* [[:Datei: Chore_girlTFS.pdf|Chore girl]] (TFS Working Group (2011). Chore Girl. Retrieved from http://www.totemfieldstoryboards.org on Jun 27, 2017.)
+* [[:Datei: Tom_and_mittens.pdf|Tom and mittens]] (Matthew Rolka &amp; Seth Cable (2014). Tom and Mittens. Totem Field Storyboards . Retrieved from http://www.totemfieldstoryboards.org on Jun 27, 2017.)
+* [[:Datei: Bill_vs_the_weather_Bislama.pdf|Bill vs. the weather]] (Jozina Vander Klok (2013). Bill vs. the Weather. Totem Field Storyboards . Retrieved from http://www.totemfieldstoryboards.org on Jun 27, 2017.)
+* [[:Datei:Woodchopper.pdf|Wood chopper]] (TFS Working Group (2011). The Woodchopper. Totem Field Storyboards . Retrieved from http://www.totemfieldstoryboards.org on Jun 27, 2017.)
+
+==Social Cognition==</text>
+      <sha1>83r7cuo5k7aa8uazizdm8pse1rh9pyj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Event structure</title>
+    <ns>0</ns>
+    <id>20</id>
+    <revision>
+      <id>707</id>
+      <parentid>649</parentid>
+      <timestamp>2019-03-18T14:26:02Z</timestamp>
+      <contributor>
+        <username>Tjukaann</username>
+        <id>11</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="6224">This page explains the values associated with the tag for {{Tagname|event structure}} -- see also the [[Tagset|tagset]].
+
+The values associated with event structure are {{Tagname|repeated}}, {{Tagname|stative}}, {{Tagname|ongoing}}, and {{Tagname|bounded}}. All descriptions of events that involve multiple instances of the same action are to be tagged as repeated. The distinctions into bounded, ongoing, and stative only apply to descriptions of individual events or actions. 
+
+===Stative===
+If an event is described as stative, its description implies little if any internal event dynamics. Such descriptions typically involve stative predicates such as ''be asleep'', ''be alive'', ''be cold'' etc.
+
+===Repeated===
+
+We use the label ''repeated'' as a cover term for descriptions of multiple instances of the same action, including pluractional descriptions (also sometimes seen as ''pluri-actional'', cf. Bril 2016 &lt;ref name=&quot;bril2016&quot;&gt;Bril, Isabelle 2016. 	
+Tense, aspect and mood in Nêlêmwa (New Caledonia): Encoding events, processes, and states. In: Zlatka Guentchéva (ed.): Aspectuality and Temporality. John Benjamins&lt;/ref&gt;). So far, we know that in Daakaka and Dalkalaen pluractionality is often signaled by verb reduplication. In Daakaka, there is also a group of verbs that lexically encode pluractionality. In contrast to labels such as ''iterative'', pluractionality does not imply that
+multiple actions have to be carried out by the same person. It may also be the case that the same action is carried out by a number of people at the same time. This is illustrated in the following example, which describes a lively scene of children playing on a big log at the beach:
+
+{| class=&quot;interlinear&quot;
+|-
+! Tejimre||  nye  ||   ra  ||  -m  ||    yan||  do   ||  '''fya-fyalo''' || ran, ||  ra ||  -m   ||   do   ||  bangbang||  ran, || '''taa-taa'''||  ran, || '''mee-meera''' || ran.
+|-
+| child  ||  3P  ||   3P  || -REAL || go ||  CONT || REDUP-row ||   on  ||   3P||  -REAL||  CONT || play  ||    on  || REDUP-sit || on || REDUP-jump || on 
+|-
+| colspan=&quot;20&quot; | The children were playing boat on it, they were playing on it,  sitting on it and jumping on it. {{Example|Dalkalaen|Competition_380-381}}
+|}
+
+A special case of pluractional descriptions with multiple actors are reciprocal descriptions:
+
+{| class=&quot;interlinear&quot;
+|-
+! yuo-yaa   ||   to  || '''yaa-yaa''',|| ye   || to  || pu ||  bweak
+|-
+| feeling-3D.POSS || NEG||  REDUP-hurt||  3PC ||   NEG || blow || swear
+|-
+|colspan=&quot;20&quot; | They didn't get angry at each other, they didn't swear. {{Example|Daakaka|0003}}
+|}
+
+The label ''repeated'' also extends to cases where the same action is performed by the same actor, either on the same occasion ('''iterative''' aspect) or on various occasions ('''habitual'''). 
+Non-stative '''generic''' descriptions also fall into this domain. All those cases tend to involve reduplication in Daakaka. Generic descriptions, because of their special modal properties, may be specifically labeled as such with the [[Keywords|keyword]] GENERIC.
+
+Some examples are given below:
+
+* Iterative description:
+
+{| class=&quot;interlinear&quot;
+|-
+!  gee || mwe || esi || na || sa || sivi || mwe || pwe ||  '''yaa-yaase''' || nge  ||kyu || nge \\
+|-
+| flying.fox|| REAL|| see|| COMP|| CM|| lorikeet|| REAL|| CONT|| REDUP-turn|| 3S||  surround|| 3S  
+|-
+| colspan=&quot;20&quot; | the flying fox saw the lorikeet rotating around himself {{Example|Daakaka|5448}}
+|}
+
+*Habitual description:
+
+{| class=&quot;interlinear&quot;
+|-
+!  nate-yaa  ||nyoo || ya=m || du  || '''deng-deng''' || webung ||  ke-kevene 
+|-
+|child-3D.POSS  ||3P  || 3P=REAL  ||stay  ||REDUP-cry || day || REDUP-every 
+|-
+| colspan=&quot;20&quot; | their children cried every day {{Example|Daakaka|3033}}
+|}
+
+*Generic description:
+
+{| class=&quot;interlinear&quot;
+|-
+!  sini-sye||  nyoo||  mwe ||  '''tii-tii''' 
+|-
+| thorn.of-3S.POSS||  3P ||  REAL || REDUP-sting 
+|-
+|colspan=&quot;20&quot;| its spikes (can) sting {{Example|Daakaka|1901}}
+|}
+
+{| class=&quot;interlinear&quot;
+|-
+! borvi     ||       mw-i,   || mw-i    || mesyu || swa || sa, ||  ya-m   ||   '''an-ane'''
+|-
+| str.surgeonfish ||REAL-COP ||REAL-COP ||fish || one ||TOP|| 3P-REAL|| REDUP-eat
+|-
+|colspan=&quot;20&quot;| The surgeonfish is a fish they eat. {{Example|Daakaka|1906}}
+|}
+
+===Bounded===
+The tag {{Tagname|bounded}} is used to refer to episodic, non-stative event descriptions of the past or future that do not refer to the internal structure of the event.
+
+Some examples are given below:
+
+* ''I went to Paris last year.''
+* ''I have been to Paris.''
+* A: What are you going to do next? B: ''I'm going to watch a movie.''
+* A: What are you going to do next? B: ''I'm going to watch some movies.'' (Here, you can add the [[Keywords|keyword]] PLURAL to make note of the plural object.)
+* A: What did you do yesterday night? B: ''I took a nice long bath.''
+
+
+Descriptions of perceptions are labelled as {{Tagname|bounded}} unless they explicitly describe an active process:
+
+* ''She saw a light'' – {{Tagname|bounded}}
+* ''She was watching the flame'' – {{Tagname|ongoing}}
+* ''He heard a noise'' – {{Tagname|bounded}}
+* ''He was listening to the song'' – {{Tagname|ongoing}}
+
+The stimulus of the perception, if given by a predicate, can depend on the semantics of the predicate. Examples:
+* ''She heard him '''knock''' on the door'' – {{Tagname|bounded}}
+* ''She heard him '''sing/ singing'''.''  – default: {{Tagname|bounded}}
+* ''She heard him ['''shout''' her name repeatedly].'' {{Tagname|repeated}}
+
+===Ongoing===
+We label event descriptions as {{Tagname|ongoing}} when 
+* they refer specifically to the dynamics of the event's internal development;
+* they are episodic descriptions of the present moment;
+* they provide the background for a new development in a narrative;
+
+Examples are given below:
+
+* ''[They were walking along the beach] when they heard someone cry out.''
+* ''[He was pulling the tray out of the oven with great care], but then the phone rang and he burned his hand.''
+*  ''What is she doing right now? [She is smoking.]''
+
+===Change of State==
+The category &quot;change of state&quot; has been demoted to a keyword. Previous markers of this category will be collapsed with the category {{Tagname|bounded}}.
+
+===References===
+&lt;references /&gt;</text>
+      <sha1>knpafx3ytav4ww6lh8quav55to004jo</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Genre</title>
+    <ns>0</ns>
+    <id>31</id>
+    <revision>
+      <id>497</id>
+      <parentid>496</parentid>
+      <timestamp>2016-09-30T08:19:47Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Common plots and features */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1228">==Main categories==
+===Story===
+Traditional stories with a conventionalised structure.
+
+===Report===
+A report about someone's experience, biographic and not conventionalised.
+
+===Explanation===
+
+An account of the properties of natural or cultural objects and phenomena, or procedural instructions.
+
+===Conversation===
+
+A dialogue between two or more native speakers.
+
+===Speech===
+A public monologue.
+
+==Common plots and features==
+
+===Human children of animals===
+Both in Vanuatu and in the Saliba data, we find a variety of stories where demigod-like actors who usually descend from animals are irresistible to humans of the opposite sex. They are often admired for their magical powers but may also incite envy. Their animal mothers are often killed.
+
+===Animal spouses===
+
+===Origins of places / rocks / formations===
+
+===Serving feces===
+A common motive in both the Saliba data and the stories from Vanuatu is someone serving baked feces to their enemy.
+
+===Hansel and Gretel===
+The theme of the evil step mother who wants to abandon or eat her step-children appears to be quite widespread.
+
+===Competition between animals===
+Animals holding a competition also appears to be quite a common theme.
+
+====Hedgehog and hare====</text>
+      <sha1>id4zu4f7cltj6595gp1vxckb0mnxdg5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Hauptseite</title>
+    <ns>0</ns>
+    <id>34</id>
+    <redirect title="Main page" />
+    <revision>
+      <id>157</id>
+      <timestamp>2016-04-29T18:36:57Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>Princevk verschob die Seite [[Hauptseite]] nach [[Main page]]: Language compatibility</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="28">#WEITERLEITUNG [[Main page]]</text>
+      <sha1>k4jr5z5vy0ogu6uzsfase0u03x1txyb</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Keywords</title>
+    <ns>0</ns>
+    <id>49</id>
+    <revision>
+      <id>669</id>
+      <parentid>651</parentid>
+      <timestamp>2017-10-20T08:58:30Z</timestamp>
+      <contributor>
+        <username>Druskats</username>
+        <id>3</id>
+      </contributor>
+      <comment>Include para about format and search queries</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5393">Keywords augment the labels in the other categories by more ad hoc properties that we do not necessarily want to document systematically throughout, but that we still want to be able to keep track of should they prove relevant.
+They form a closed list of words which are documented here. 
+
+===Format and search===
+
+If more than one keyword should be applied, they must be provided in a comma-separated list, with a single whitespace behind the comma, e.g., &lt;code&gt;CAUSATIVE, IAA&lt;/code&gt;.
+
+As soon as a single instance of a comma-separated keyword list is included in a corpus, single search in ANNIS (e.g., &lt;code&gt;keywords=&quot;IAA&quot;&lt;/code&gt; will not work anymore. Instead, keywords - just like any other free-form tag - should '''always''' be searched with a regex, e.g.:
+
+* &lt;code&gt;keywords=/.*IAA.*/&lt;/code&gt; (for any instances including the ''IAA'' keyword)
+* &lt;code&gt;keywords=/.*,.*/&lt;/code&gt; (for any instances including more than one keyword)
+
+==PLURAL==
+The internal argument of the verb is plural. This might not be marked explicitly. It might be apparent from the context or marked by number markers, quantifiers, numerals, the lexical semantics of the (pluractional) verb, reduplication of the verb or otherwise. The internal argument of the verb is the subject for intransitive verbs and the object in case of transitive verbs.
+Some examples with pluractional verbs from Daakaka:
+
+{| class=&quot;interlinear&quot;
+|-
+! vis  ||  ka||   we||    '''tesi'''||      '''du'''||   yan||  tan
+|-
+|banana || ASR || POT || fall.PL || stay.PL || on ground
+|-
+| colspan=&quot;20&quot; | the bananas will fall down {{Example|Dalkalaen|exp50:067}}
+|}
+
+==PERFORM==
+The utterance instantiates a performative speech act as in (I declare you man and wife, I hereby promise to..., I name this child..., I absolve you of your sins)
+
+==NEGMAT==
+An embedded proposition is positive but embedded in a negative matrix clause.
+
+* ''She didn't want [to leave].''
+* ''She didn't think [he'd leave].''
+* ''She didn't know [he'd left].''
+
+==REPORT==
+Reported speech.
+
+==GENERIC==
+For generic descriptions.
+
+==HABITUAL==
+For obviously habitual descriptions.
+
+==PURPOSE==
+
+For purpose clauses (&quot;in order to&quot;)
+
+==SEQUENCE==
+
+For descriptions of a series of actions as in:
+
+* She took a knife, diced a bunch of beets, tossed them with oil and spread them on a baking sheet.
+* He pulled the canoe onto the shore, then he made his way to the village and spoke with his children.
+
+==DURATION==
+
+We are interested in seemingly uninformative phrases that indicate the passage of time or the duration between events in a narrative.
+
+Example: ''They were living like this for a long time'', ''they went on and on and on''. Often, these descriptions are {{Tagname|bounded}}.
+
+==SONG==
+When a sequence of reported speech is a song.
+
+==BIPOLAR==
+For bipolar questions as in:
+
+* Did you see her or not?
+* Did you see her or didn't you?
+
+==CERTAIN==
+Since future-oriented statements can only be tagged as {{Tagname|possible}} or {{Tagname|counterfactual}}, but not {{Tagname|factual}}, we do not have a way to distinguish between certain pronouncements and vague possibilities (''If Trump wins, I will leave for Canada'' vs. ''One day there might be world peace.''). In order to document cases in which an assertion about the future is a strong commitment with considerable certainty, we may add the keyword CERTAIN.
+
+==Reference time==
+
+We want to retain the option to specify the reference time R relative to the speech time S: 
+* R &lt; S
+* R = S
+* R &gt; S
+
+This option is particularly relevant for embedded clauses. The {{Tagname|time}} value is determined relative to the matrix clause, which provides the reference time. Example:
+* ''He wanted [to put the light into the bag].'' {{Tagname|future}}, \keywords: R &lt; S
+* ''She saw that he was going/ went to the beach.'' {{Tagname|present}}, \keywords: R &lt; S
+* ''He saw that she had gone to the beach.'' {{Tagname|past}}, \keywords: R &lt; S
+
+==Event time==
+In some languages, it is possible to specify the relation between event time and speech time. We do not expect this option for the subject languages, but in order to annotate the contexts where such marking would be appropriate, the following set of keywords can be used.
+
+* E &lt; R
+* E = R
+* E &gt; R
+
+* ''They left. [He had not roasted his food.]'' E &lt; R
+
+==HEADTAIL==
+For linking structures where the beginning of one sentence repeats  the end of the preceding sentences, as in the following example:
+
+* ''They finished eating and cleaned up the plates. They cleaned up the plates/ Having cleaned up the plates, they started playing music.''
+
+==SERIAL==
+For interesting configurations with serial predicates.
+
+==COS==
+
+The keyword COS, ''change of state'' is applied here rather broadly to cover ingressive and egressive descriptions of event phases as well as descriptions of a change-of-state more generally. The label is only applied when explicit reference to the change is made or when there is an explicit contrast between two subsequent states.
+
+Examples are given below:
+
+* She started to sing.
+* He stopped singing.
+* They were not singing anymore.
+* Now, they are singing (they weren't singing before).
+* She tried for a long time and then finally the knot came loose.
+
+==IAA (Inter-annotator agreement)==
+Inter-annotator agreement: please use this tag if you would like to have feedback by other project members on your choice of tags and/or keywords.</text>
+      <sha1>h4xej4w13ssqgbbf07d8uepdrkgdfz6</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Main clauses</title>
+    <ns>0</ns>
+    <id>7</id>
+    <revision>
+      <id>15</id>
+      <parentid>14</parentid>
+      <timestamp>2016-03-24T09:24:49Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Assertions */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="304">==Assertions==
+
+*[[Positive assertions]]
+*[[Negative assertions]]
+*About the past
+*About the present
+*About the future
+*Consider different genres
+*Direct speech
+*Perfective vs. imperfective
+
+==Directives==
+*[[Imperatives]]
+*[[Prohibitives]]
+
+
+==Questions==
+
+*[[Content questions]]
+*[[Polarity questions]]</text>
+      <sha1>33tpz4jn484o1ieh01iucqclj07lj8z</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Main page</title>
+    <ns>0</ns>
+    <id>1</id>
+    <revision>
+      <id>572</id>
+      <parentid>571</parentid>
+      <timestamp>2017-05-13T11:06:06Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Elicitation matierals */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="2254">[[Datei:MelaTAMP map.png|400px|miniatur|Locations of the project languages]]
+This wiki is a developing collection of interpretations and contexts that need to be differentiated in definitions of TAMP markers of the seven project languages from Vanuatu and Papua New Guinea. It also contains information on the various languages and corpora we are working on.
+
+==Categories==
+===Main categories===
+The superordinate categories we investigate are the following:
+
+*[[Clause types]]
+*[[Temporal reference]]
+*[[Event structure]]
+*[[Modal domain]]
+*[[Polarity]]
+*[[Genre]]
+
+===Other categories and phenomena===
+We are also interested in:
+*[[Quantifiers]]
+*[[Serial verb constructions]]
+*[[Pluractionality]]
+
+==Tagset==
+[[Tagset]]
+
+[[Queries]]
+
+==Task list==
+
+Here is a description of the various steps we need to take to reach our goals.
+[[Task list]]
+
+==Languages==
+
+The following sites collect information on the languages and associated corpora we are working with:
+
+*[[South Efate]]
+*[[Saliba/Logea]]
+*[[Mavea]]
+*[[Daakaka]]
+*[[Dalkalaen]]
+*[[Daakie]]
+*[[North Ambrym]]
+
+==Data==
+
+The following sites collect data-related information, i.e., data collection, processing and management information:
+
+*[[Primary data repository]]
+*[[Unified file structure]]
+
+==Elicitation materials==
+Based on the gaps in the corpora that we have diagnosed during the first rounds of tagging, we select and create certain elicitation materials to help us generate new relevant recordings during fieldwork.
+These are documented on the page about [[Elicitation materials]].
+
+== Points for discussion ==
+
+*[[Open questions]]
+*[[Tag set problems]]
+
+== Starthilfen ==
+Hilfe zur Benutzung und Konfiguration der Wiki-Software findest du im [//meta.wikimedia.org/wiki/Help:Contents Benutzerhandbuch].
+* [//www.mediawiki.org/wiki/Manual:Configuration_settings Liste der Konfigurationsvariablen]
+* [//www.mediawiki.org/wiki/Manual:FAQ MediaWiki-FAQ]
+* [https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce Mailingliste neuer MediaWiki-Versionen]
+* [//www.mediawiki.org/wiki/Localisation#Translation_resources Lokalisiere MediaWiki für deine Sprache]
+*[https://wikis.hu-berlin.de/melatamp/MediaWiki:Common.css  CSS]
+*[[https://wikis.hu-berlin.de/melatamp/MediaWiki:Sidebar]]</text>
+      <sha1>s1aeraxwv14b4wgoqtztpzdku63ivlf</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Mavea</title>
+    <ns>0</ns>
+    <id>54</id>
+    <revision>
+      <id>553</id>
+      <parentid>552</parentid>
+      <timestamp>2017-03-01T19:11:52Z</timestamp>
+      <contributor>
+        <username>Ossomari</username>
+        <id>10</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1587">In our project we investigated the verb stem reduplication in Mavea, a language spoken by a small speaker community in the island of Vanuatu. According to the current state of the research on Melanesian languages, verb stem reduplication may have several functions, including but not limited to modification of the verb’s valence, telicization, as well as marking of plurality of events, patients and actors. Some functions may be really not related to the others – plurality cannot probably be thought to be related to detransitivation, for example. Nevertheless, is there an overarching function which can explain and unify at least some of the data? In our project, we tried a semantic approach to the problem. We identified all cases of verb stem reduplication in the corpus and, based on their English translation, tried to verify whether we could find a common semantic core. Over 60% of the reduplications occurred in verbs of motion or change of state. Interestingly, we also found some verbs of state, which may deserve a separate analysis. Our data points out that motion and change of state may play a role in the capability of a verb to have a reduplicated form and we suggest that including a morphosyntactic analysis of the TAM properties of the reduplicated entries may be a key to a better understanding of verb stem reduplication in Mavea.
+
+
+Example of verb stem reduplication in Mavea.
+
+
+{| class=&quot;interlinear&quot;
+|-
+! ro || moval || sopsop || kamarua.
+
+|-
+| then || 3sg.go || follow || 1pl.excl.dl
+
+|-
+| colspan=&quot;4&quot; | &quot;He followed us.&quot; (Mavea corpus ref 06045.012)
+|}</text>
+      <sha1>0jsb55fi3nyqieafx7vylme78sjdo39</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Modal domain</title>
+    <ns>0</ns>
+    <id>21</id>
+    <revision>
+      <id>714</id>
+      <parentid>520</parentid>
+      <timestamp>2019-04-01T13:24:10Z</timestamp>
+      <contributor>
+        <username>Tjukaann</username>
+        <id>11</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="6049">==Overview==
+[[Datei:ModalDomains.png|miniatur|Modal domains as defined in a branching-times framework. Solid: the actual past and present. Dashed: the possible futures. Dotted: the counterfactual domain]]
+
+Modal meanings are commonly classified according to two dimensions: modal force (necessity, possibility) and modal flavour (epistemic, deontic etc.). In addition, many descriptions of mood-prominent languages rely on the distinction between realis and irrealis.
+In our research with the West Ambrym language, however, it appeared that the latter distinction is more useful and basic to the system. But the domain of the irrealis has to be further divided into the counterfactual and possible domains. These can be characterized in terms of a branching-times structure:
+
+*The actual present ''i''&lt;sub&gt;0&lt;/sub&gt; and the actual past (predecessors of ''i''&lt;sub&gt;0&lt;/sub&gt;).
+*The counterfactual past, present and future: indices that are neither predecessors nor successors of ''i''&lt;sub&gt;0&lt;/sub&gt;.
+*The possible future(s): successors of ''i''&lt;sub&gt;0&lt;/sub&gt;.
+
+For the purposes of our tagset, we make a three-way distinction which builds on those domains, but is not entirely identical to them. The three values we use are {{Tagname|factual}}, {{Tagname|counterfactual}} and {{Tagname|possible}}: The labels {{Tagname|factual}} and {{Tagname|counterfactual}} coincide with the corresponding domains. The label {{Tagname|possible}} comprises the possible futures as well as the combination of the actual and the counterfactual past and present.
+
+==The factual==
+The actual present is given by context. By default, this is the time and world of speaking, but the world may be a fictional one and the present may be a narrative present.
+
+{| class=&quot;interlinear&quot;
+|-
+! mwe  || liye || an    ||    bosi
+|-
+| REAL || take || 3S.POSS ||  copra.chisel
+|-
+| colspan=&quot;4&quot; | &quot;He took his copra chisel.&quot;
+|}
+
+The {{Tagname|factual}} domain comprises the actual present and past.
+'''Generic''' assertions are also classified as {{Tagname|factual}}, despite their modally ambiguous nature:
+
+* ''Mosquitoes drink blood.''
+* ''If you switch the light on after dark, it attracts/ will attract mosquitoes.''
+
+==The counterfactual==
+
+Counterfactual clauses are mostly restricted by conditions as in ''he would have taken the train, if it had been on time'' or ''I would go to the conference, but I cannot find a good childcare solution''.
+
+Another prominent context for counterfactual modality are complement clauses of verbs like ''think'', when the believes of the matrix subject differ from the believes of the speaker; or complement clauses of verbs expressing impossible wishes about the past or present.
+
+* ''She thought he had died.''
+* ''I wish I hadn't eaten this.''
+
+==The possible==
+
+The possible comprises several domains, depending on the temporal reference of the clause. Here are some examples:
+
+*''I will attend the conference.'' (Future possibilities) {{Tagname|future}}, {{Tagname|possible}}
+*''I have to attend the conference.'' (Future possibilities)  {{Tagname|future}}, {{Tagname|possible}}
+*''I may/might attend the conference.'' (Future possibilities)  {{Tagname|future}}, {{Tagname|possible}}
+*''She may be attending the conference.'' (combination of actual present and counterfactual present -- present possibility) {{Tagname|present}}, {{Tagname|possible}}
+*''She may/ might have attended the conference.'' (combination of actual present and counterfactual past -- past possibility) {{Tagname|past}}, {{Tagname|possible}}
+
+An interesting case is posed by TAM-marked serial predicates in negative contexts such as the following:
+
+{| class=&quot;interlinear&quot;
+ |-
+ ! nge|| tamo   ||    ngye  ||   tere  ||    gone|| '''ne'''     ||    omane|| ke   ||  ngye    || mwe  ||  kie
+ |-
+| now|| first.born|| 3S ||   NEG.REAL|| make ||3S.IR.NEG|| like || CP.RE|| 3S    ||  3S.RE ||say
+|-
+|colspan=&quot;20&quot; | But the firstborn, he did not do as he said. {{Example|Daakie|Andri2.038}}
+ |}
+
+Here, the secondary predicate ''omane'', &quot;be like&quot; is preceded by the negative irrealis marker ''ne''. While several different combinations of mood and polarity values would be plausible for this marker in this context, we decided to tag it as {{Tagname|possible}}, {{Tagname|negative}}. In addition, the keywords NEGMAT and SERIAL may be added.
+
+A similar difficult case are complements of negated predicates expressing possibility, which would usually be translated by a modal auxiliary.
+
+{| class=&quot;interlinear&quot;
+ |-
+ ! Mwe||   ka, || 'e'e, || to ||   wese ||   [ka  ||  na ||    -n ||        liye || ngok]
+ |-
+ |REAL || say || no ||    NEG || enough || MOD || 1S ||    -POT.NEG || take || 2S
+ |-
+ | colspan=&quot;20&quot; |  He said: No, I can't carry you.
+ |}
+
+The bracketed section here should be tagged as {{Tagname|future}}, {{Tagname|possible}}, {{Tagname|positive}}
+
+==Other modal categories==
+===Modal force===
+
+Modal statements may differ in terms of their force. The sentence ''she must be in Berlin'' is intuitively a stronger commitment than the sentence ''she may be in Berlin.'' While many European languages have paradigms of auxiliaries that differentiate systematically between necessity and possibility, the interpretation of modal force in the context of Melanesian languages is often context-dependent.
+
+===Modal flavor===
+
+Modal statements can further be differentiated in terms of their flavor. The most prominently discussed flavors are ''epistemic'' and ''deontic''. A statement expressing an epistemic modal flavor can often be paraphrased as ''in view of what is known, it is necessary/possible that...''. An example would be the sentence ''she must have arrived in Berlin by now.'' By contrast, a deontic statement can be paraphrased as ''in view of the rules/ laws, it is necessary/ possible that...'', as in ''you may go now''. Further often mentioned flavors are ''bouletic'', ''teleologic'', ''intrinsic'' etc. These interpretations are known to be widely context-dependent and do not seem to be systematically differentiated in the Oceanic languages of Melanesia.</text>
+      <sha1>ej2plmrkhyi4h3kozbyj4vayxaja11k</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Open questions</title>
+    <ns>0</ns>
+    <id>25</id>
+    <revision>
+      <id>420</id>
+      <parentid>419</parentid>
+      <timestamp>2016-06-21T11:44:11Z</timestamp>
+      <contributor>
+        <username>Druskats</username>
+        <id>3</id>
+      </contributor>
+      <comment>Strike suggestion</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1497">==Tags==
+*I think there should be a &quot;reported speech&quot; tag independent of clause type. [[Benutzer:Princevk|Kilu]] ([[Benutzer Diskussion:Princevk|Diskussion]]) 14:13, 24. Apr. 2016 (CEST)
+*[[Tag set problems]]
+*&lt;strike&gt;I think we should abbreviate tag names to 2- or 3-char markers for use in Toolbox&lt;/strike&gt; [[Benutzer:Druskats|Druskats]] ([[Benutzer Diskussion:Druskats|Diskussion]]) 13:01, 21. Jun. 2016 (CEST)
+== Questions to discuss ==
+
+# Use ''git'' for versioning corpus data?
+# Licenses for publishing corpora on ANNIS?
+:* Needs to be discussed with the authors during workshop 2017
+
+=== Sustainable storage of data and metadata ===
+
+* Primary data in DOBES (long-term availability?)
+* Secondary (n-ary) storage option is a must
+* Metadata: Which repository do we want to use?
+** '''''Real long-time availability'''''
+** [http://clarin-d.de/de/aufbereiten/clarin-zentrum-finden CLARIN-D Centres for Data] (Long-term?)
+*** [https://corpora.uni-hamburg.de/drupal/ Hamburger Zentrum für Sprachkorpora]: CMDI profiles, tagsets not machine-readable, 
+*** [http://clarin.informatik.uni-leipzig.de/repo/ DOBES]: Format? Tagsets not machine-readable
+*** [http://clarin.informatik.uni-leipzig.de/repo/ CLARIN-D Centre Leipzig]: CMDI profiles, Tagsets not machine-readable
+*** [http://www.laudatio-repository.org/repository/documentation LAUDATIO]: [http://www.laudatio-repository.org/repository/documentation Custom metadata format] including tagset description, '''not production-ready'''
+** ZAS?</text>
+      <sha1>ebo2wxlesd21g5az5u6xcd1s03cy4wk</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Polarity</title>
+    <ns>0</ns>
+    <id>22</id>
+    <revision>
+      <id>465</id>
+      <parentid>462</parentid>
+      <timestamp>2016-09-15T08:38:13Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Positive polarity */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="874">==Positive polarity==
+
+A positive clause bears no sign of negation:
+
+* ''I like apples.''
+* ''We climbed a mountain.''
+* ''She will return next Sunday.''
+
+Positive or neutral questions will also be tagged as {{Tagname|positive}}:
+
+* ''Do you like coffee?''
+* ''Can we leave now?''
+
+We will tag bipolar questions also as positive, but may add the [[Keywords|keyword]] BIPOLAR:
+* ''Do you like coffee or not?''
+
+==Negative polarity==
+
+Clauses will be tagged as negative whenever there is a clausal negation or a negative article or quantifier:
+
+* ''She didn't call.''
+* ''We won't come.''
+* ''Nobody saw them.''
+* ''They were nowhere to be seen.''
+
+Questions can also be negative:
+
+* ''Didn't you see the car?''
+* ''Isn't there a vegetarian restaurant in this area?''
+
+Positive clauses embedded under negative matrix clauses should receive the [[Keywords|keyword]] ''NEGMAT''.</text>
+      <sha1>p6if8iy45lor43d4u5qzk5oaj3hrwfd</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Positive assertions</title>
+    <ns>0</ns>
+    <id>10</id>
+    <redirect title="Daa Realis 4873" />
+    <revision>
+      <id>21</id>
+      <timestamp>2016-03-24T09:47:15Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>Princevk verschob die Seite [[Positive assertions]] nach [[Daa Realis 4873]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="34">#WEITERLEITUNG [[Daa Realis 4873]]</text>
+      <sha1>llmwku93iaf8om9g3w60mazmrbcybag</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Primary data repository</title>
+    <ns>0</ns>
+    <id>55</id>
+    <revision>
+      <id>556</id>
+      <timestamp>2017-03-10T11:56:53Z</timestamp>
+      <contributor>
+        <username>Druskats</username>
+        <id>3</id>
+      </contributor>
+      <comment>Die Seite wurde neu angelegt: „= Primary data repository =  The primary corpus data for our project is held and versioned in a [https://git-scm.com/ git] repository, the remote of which is h…“</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1064">= Primary data repository =
+
+The primary corpus data for our project is held and versioned in a [https://git-scm.com/ git] repository, the remote of which is hosted on the [https://about.gitlab.com/ GitLab] instance of Humboldt-Universität.
+
+The URL is https://scm.cms.hu-berlin.de/gitlab/druskats/melatamp-data/. The repository itself is '''private''' and currently only accessible by members of the project team.
+
+The repository’s branch structure is as follows.
+
+* &lt;code&gt;master&lt;/code&gt; holds only releases of our corpus data. This branch must never be worked upon directly. Changes to it must onl come in the form of pull requests from other branches (i.e., &lt;code&gt;development&lt;/code&gt;).
+* &lt;code&gt;development&lt;/code&gt; holds working copies of the data. This is the branch that shuold be worked on directly, and changes in the data itself (e.g., annotations) should be pushed to this branch only.
+* &lt;code&gt;annis&lt;/code&gt; holds the results of conversion to the [http://corpus-tools.org/annis/ ANNIS] format via [http://corpus-tools.org/pepper/ Pepper], and related files.</text>
+      <sha1>o56o8mixaxga9nzjt71ra3m5lm9vq3d</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Queries</title>
+    <ns>0</ns>
+    <id>52</id>
+    <revision>
+      <id>554</id>
+      <parentid>534</parentid>
+      <timestamp>2017-03-09T18:39:24Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1160">==Overview of tagged contexts==
+We first want to get an overview of the contexts we have distinguished so far. At the first stage, this will help us to complete to tag the minimal number of environments as specified [[Tagset#Priorization|here]].
+
+In the ANNIS query field, type in the following query: 
+
+ clause  &amp;
+ time &amp;
+ mood &amp;
+ event &amp;
+ polarity &amp; 
+ #1 _=_ #2 _=_ #3 _=_ #4 _=_ #5
+
+
+Then, press the button &quot;More&quot; under the query field and select &quot;Frequency Analysis&quot;. You will get an overview of all the different contexts that have been tagged so far.
+
+==Contexts for a specific entry==
+
+To get an overview of the contexts in which a certain lexeme has been tagged, we can expand the above query by including the search for  this lexeme. In the example below, this lexeme is ''bena''.
+
+ clause  &amp;
+ time &amp;
+ mood &amp;
+ event &amp;
+ polarity &amp; 
+ t = &quot;bena&quot; &amp;
+ #1 _=_ #2 _=_ #3 _=_ #4 _=_ #5 &amp;
+ #1 _i_ #6
+
+==Draft Filtering errors==
+
+ err &amp;
+ (a#m-p != /.*ta, wane.*/| a#p-p != /.*ta, wane.*/)   &amp;
+ #1 _i_ #a
+
+==Looking for verb sequences==
+
+Checking for candidates for auxiliaries and serial verbs:
+
+ p=/v.*/ &amp;
+ p=/v.*/ &amp;
+ #1 . #2 &amp;
+ g &amp;
+ g &amp;
+ #1 _=_ #3 &amp;
+ #2 _=_ #4</text>
+      <sha1>8kswnqbw2cfswk3up22mz5l163vn821</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>SLE workshop</title>
+    <ns>0</ns>
+    <id>95</id>
+    <revision>
+      <id>700</id>
+      <parentid>699</parentid>
+      <timestamp>2018-09-28T18:18:55Z</timestamp>
+      <contributor>
+        <username>Krajinoa</username>
+        <id>4</id>
+      </contributor>
+      <comment>/* Abstract submission guidelines */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="8946">On this page you can see our call for abstracts for the TAMCAL workshop:
+
+==Tense, aspect and mood categories across languages==
+Convenors: Kilu von Prince, Ana Krajinović, Jozina Vander Klok
+
+===Abstract submission guidelines===
+
+We are inviting contributions of short abstracts for the workshop Tense, aspect and mood categories across languages to be proposed to the 52nd Annual Meeting of Societas Linguistica Europaea (SLE) 2019 to be held at Leipzig University in Germany from August 21-24, 2019. Interested participants should write a provisional abstract (max. 300 words) with your name and affiliation and send to tamcalsle2019@gmail.com by November 9th, 2018. We will then submit a provisional list of workshop participants along with your abstracts by Nov. 20th to SLE for consideration, and let you know about the outcome. More information about the conference can be found here: &lt;http://sle2019.eu/call-for-papers&gt;
+
+Please share and spread the word to others who might be interested! 
+
+===Workshop description===
+
+There is a proliferation of terms in the study of tense, aspect and modality (TAM). But it is not always clear what the relation between those terms is.  
+In some cases, several terms appear to refer to phenomena that are functionally very similar. This might be the case with continuous and progressive aspect, or irrealis, potential and hypothetical mood. In other cases, one category might be a special case of another category, for example habitual sentences are sometimes described as a special case of generic statements (Krifka et al. 1995) or, more generally, of imperfective aspect (Comrie 1976). We would like to bring together perspectives from language documentation and language-specific description, typology, formal and functional approaches to semantics and pragmatics, as well as syntax and morphology to discuss relations between TAM terms cross-linguistically.
+
+We also welcome contributions that specifically address discrepancies between linguistic subdisciplines, or to state it from another perspective, how different linguistic frameworks might constrain or create more freedom in their approach to accounting for TAM semantic properties. For instance, typologists often come to different conclusions from formal semanticists when it comes to the classification of TAM categories. Typologists tend to assume that cross-linguistic differences in the distribution of particular TAM expressions are based on their lexical semantic definition. By contrast, in formal semantics some of these differences can be derived from various language-internal structures and processes, such as paradigmatic effects.
+Examples for this include:
+
+• English simple past has a discontinuous implicature in connection with stative verbs as in &quot;Rose is in the hospital. She had trouble breathing&quot; -- such an utterance implicates that Rose is now better able to breathe. Altshuler &amp; Schwarzschild (2012) argue that this implicature is a result of the contrast of English simple past and simple present.
+In some languages, such discontinuous interpretations are however not restricted to stative verbs. This has led Plungian &amp; van der Auwera (2006) to diagnose a specific typological category of &quot;discontinuous past&quot;. By contrast, Cable (2016) and von Prince (2017) have argued that in those languages, too, the discontinuous interpretation is a result of the paradigm in which the past markers find themselves, rather than a function of their lexical meaning.
+
+• The category of &quot;iamitive aspect&quot; has been introduced by Olsson (2013) and Dahl &amp; Wälchli (2016) similar to, but separate from, both perfect aspect and &quot;already&quot;. One of its defining features is the change-of-state interpretation that iamitives show in connection with stative verbs, unlike Indo-European perfects. But more recent research argues that these interpretations may equally be expressed by perfect aspect (Krajinović 2018 for Nafsan) because of language-specific processes (also compare the analysis of &quot;already&quot; by vander Klok &amp; Matthewson (2015) for Javanese). This poses a general question of whether the different functions of perfect attested cross-linguistically can be explained by language-specific effects, and how different would these functions need to be to justify establishing a new typological gram.
+
+• Languages that do not have obligatory tense marking are commonly categorized as tenseless. But Matthewson (2006) has argued that  St’a´t’imcets has a zero tense morpheme, which restricts the temporal reference of a clause to non-future tense. 
+By contrast, Mucha (2012) argues for Hausa that it is genuinely tenseless and that temporal reference is determined by pragmatic defaults.
+
+• This divide between sub-disciplines is also reflected in how modal meanings are categorized. Thus, the distinction between participant-internal and participant-external modalities, which is fundamental to typological studies of modality (e.g. Bybee et al. 1994, van der Auwera &amp; Plungian 1998), is not reflected in the formal semantics discourse on modality (e.g. Portner 2009). 
+
+Independent from  particular theoretical perspectives, there are many  cases in which the relation between categories it not entirely clear, for example: How does iterativity relate to pluractionality? What is the relation between sequentiality, prospective aspect and perfect aspect, frequentatives and habituals, progressive and continuous aspect? What is the relation between &quot;timitive&quot;, &quot;avertive&quot;, &quot;apprehensive&quot; modality, also called &quot;volitive of fear&quot; (Vuillermet 2018)?
+How many modal distinctions such as &quot;deontic&quot; and &quot;circumstantial&quot; do languages mark grammatically? 
+
+We invite contributions from a variety of backgrounds and perspectives, including language documentation and description, typology, semantics and pragmatics, syntax, and morphology. We particularly welcome submissions on understudied or underdocumented languages. Possible topics for submission include:
+* Descriptive case studies of a specific TAM marker or paradigm;
+* Typological studies of the distribution of certain categories;
+* Formal and functional approaches to specific TAM categories;
+* Formal and functional approaches to the grammaticalization/diachrony of specific TAM categories;
+* Interdisciplinary studies that compare different approaches.
+
+===References===
+
+Altshuler, Daniel  and Roger Schwarzschild. 2012. Moment of change, cessation implicatures and simultaneous readings. In Emmanuel Chemla, Vincent Homer, and Gr ́egoire Winterstein, editors, Proceedings of Sinn und Bedeutung 17, Paris.
+
+Bybee, Joan L., Revere D. Perkins &amp; William Pagliuca. 1994. The Evolution of Grammar: Tense, aspect, and modality in the languages of the world. Chicago: University of Chicago Press.
+
+Dahl, Östen &amp; Bernhard Wälchli. 2016. Perfects and iamitives: two gram types in one grammatical space. Letras de Hoje 51(3). 325–348. doi:http://dx.doi.org/10.15448/1984-7726.2016.3.25454.
+
+van der Auwera Johan and Vladimir A. Plungian. 1998. Modality’s semantic map. Linguistic typology, 2(1):79–124.
+
+Cable, Seth. 2016. The implicatures of optional past tense in Tlingit and the implications for ’discontinuous past’. Natural Language &amp; Linguistic Theory.
+
+Comrie, Bernard. 1976. Aspect. Cambridge Textbooks in Linguistics. Cambridge: Cambridge University Press.
+
+Krajinović, Ana. The semantics of perfect in Nafsan. Paper presented at The Semantics of African, Asian, and Austronesian Languages (Triple A) 5, 27–29 June 2018, Konstanz, 2018. https: //semanticsofaaa2018.files.wordpress.com/2018/07/krajinovic_slides.pdf.
+
+Krifka, Manfred, Francis J Pelletier, Gregory N Carlson, Gennaro Chierchia, Godehard Link, and Alice Ter Meulen. 1995. Introduction to genericity. In Gregory N Carlson and Francis J Pelletier, editors, The Generic Book, pages 1–124. Chicago: University of Chicago Press.
+
+Matthewson, Lisa. 2006. Temporal semantics in a supposedly tenseless language. Linguistics and Philosophy, 29:673–713.
+
+Mucha, Anne. 2012. Temporal reference in a genuinely tenseless language: the case of Hausa. Proceedings of SALT, 22:188–207.
+
+Olsson, Bruno. 2013. Iamitives: Perfects in Southeast Asia and beyond. Stockholm University. MA thesis.
+
+Plungian, Vladimir A.  and Johan van der Auwera. 2006. Towards a typology of discontinuous past marking. Sprachtypologische Universalienforschung 59:317–349.
+
+Portner, Paul. 2009. Modality. Oxford University Press.
+
+Vander Klok, Jozina and Lisa Matthewson. Distinguishing already from perfect aspect: A case study of javanese wis. Oceanic Linguistics 54(1):172–205, 2015.
+
+von Prince, Kilu. Paradigm-induced implicatures in TAM-expression: A view from the Daakaka distal. In Proceedings of Sinn und Bedeutung 21, Edinburgh, 2017.
+
+Vuillermet, Marine. 2018. Grammatical fear morphemes in Ese Ejja: Making the case for a morphosemantic apprehensional domain. Studies in Language 42(1), 2018.</text>
+      <sha1>1dk9x5v58390vqmztv3zkd4cnpz6lzr</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Saliba/Logea</title>
+    <ns>0</ns>
+    <id>32</id>
+    <revision>
+      <id>186</id>
+      <parentid>185</parentid>
+      <timestamp>2016-04-30T09:43:39Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="182">[[Datei:Saliba.png|miniatur|Saliba island, Papua New Guinea]]
+
+*[[Saliba TAMP expressions]]
+*[[Saliba examples]]
+*[[Saliba glosses|List of glosses]]
+*[[Saliba genres|List of genres]]</text>
+      <sha1>cew6s5iyvklhm2p4farxpde6eeacn5i</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Saliba TAMP expressions</title>
+    <ns>0</ns>
+    <id>35</id>
+    <revision>
+      <id>352</id>
+      <parentid>351</parentid>
+      <timestamp>2016-05-13T10:13:52Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* haka, MIRATIVE */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="6294">==Conditionals==
+===''aga'', &quot;if&quot;===
+also look at:
+*''hesau'', &quot;a&quot;
+*''kabo'', &quot;will, then&quot;
+
+{| class=&quot;interlinear&quot;
+|-
+!'''aga''' || '''hesau''' || ya || ginauli || '''kabo''' || ku || kita || na || nige || hesau || ya || ginauli
+|-
+|if || a || 1SG.SUBJ || make || will/then || 2SG.SUBJ || see || and.then || NEG || a || 1SG.SUBJ || make
+|-
+| colspan=&quot;20&quot;| If I had made one you could see it, but I didn't make one. {{Example|Saliba|Nogi_01AQ_0097}}
+|}
+
+
+===''madai'', &quot;lest&quot;===
+{| class=&quot;interlinear&quot;
+!'''madai''' || ku || dup- || lau || kabo || ye || wane || si || unui || - || he- || mate || -go
+|-
+|lest/otherwise || 2SG.SUBJ || DUP- || go || will/then || 3SG.SUBJ || say || 3PL.SUBJ || catch || - || CAUS- || dead/die || -2SG.OBJ
+|-
+| colspan=&quot;20&quot;| &quot;if you keep on going (to them)&quot;, he said, &quot;they will get hold of you and kill you&quot;, {{Example|Saliba|BudoiNualele_01CY_0523}}
+|}
+
+===''gonowa'', &quot;ability&quot;, &quot;if&quot;===
+also see below
+
+{| class=&quot;interlinear&quot;
+|-
+!'''gonowa''' || -na || kabo || tamowai || hesau || hinage || ye || lau || -ma || '''kabo''' || hinage || ta || mose || -i || hinage || ye || kai
+|-
+|ability || -3SG.POSS || will/then || person || a || also || 3SG.SUBJ || go || -to.SPKR || will/then || also || 1INC.SUBJ || give || -TR || also || 3SG.SUBJ || eat
+|-
+| colspan=&quot;20&quot;| if someone comes we can also give it to them to eat {{Example|Saliba|Puluti_01DP_0021}}
+|}
+
+===''ena'', &quot;if&quot;===
+
+{| class=&quot;interlinear&quot;
+!'''ena''' || ka || kabi || labiya || '''kabo''' || hinage || ka || hai || unai || ye || -ma || maina
+|- 
+|if || 1EX.SU || touch/make || sago || will/then || also || 1EX.SU || get/take || PP.S || POS1 || -1EX.POS || string
+|-
+| colspan=&quot;20&quot;| When we make sago we then take it as our string {{Example|Saliba|Sebulu_01DP_0016}}
+|}
+
+===''mata'', &quot;if&quot;===
+{| class=&quot;interlinear&quot;
+!'''mata''' || ya || hasili || -ya || -wa || doha || ya || tau || - || dup- || dikwa || -i
+|-
+|if || 1SG.SUBJ || count/read || -3SG.OBJ || -to.ADDR || like || 1SG.SUBJ || man/person || - || DUP- || cross.over || -TR
+|-
+| colspan=&quot;20&quot;| if I 'd tell it to you I'd be skipping most of it (I would just jump over it) {{Example|Saliba|Tautolowaiya_02AQ_0064}}
+|}
+
+===''taga'', &quot;if&quot;===
+{| class=&quot;interlinear&quot;
+!tubu || -gu ||''' taga''' || ku || kamposi || -ma
+|-
+|grandparent/child || -1SG.POSS || if || 2SG.SUBJ || jump || -to.SPKR
+|-
+| colspan=&quot;20&quot;| 'Grandson, if you could jump down' (she wants him to jump down), {{Example|Saliba|TBLaki_01AG_0200}}
+|}
+
+==Possibility==
+===''haka'', MIRATIVE===
+
+{| class=&quot;interlinear&quot;
+!ye || -gu || buluka || wa || ya || dup- || wase || -i || wa || '''haka''' || siya || se || kaiwahali
+|-
+|POSS1 || -1SG.POSS || pig || ANA || 1SG.SUBJ || DUP- || search || -TR || ANA || MIRATIVE || 3PL || 3PL.SUBJ || steal
+|-
+| colspan=&quot;20&quot;| is my pig, I was looking for it, they must have stolen it.&quot; {{Example|Saliba|BwalaDoini_01CO_0121}}
+|}
+
+===''gonowa'' &quot;ability&quot;===
+{| class=&quot;interlinear&quot;
+!nige || '''gonowa''' || -na || temeta || pawa || ye || hai || -go ...
+|-
+|NEG || O.K. || -3SG.POSS || near.ADDR || power || 3SG.SUBJ || get/take || -2SG.OBJ 
+|-
+| colspan=&quot;20&quot;| 'That can't give you an electric shock [abr]' {{Example|Saliba|PowerGotMe_01AQ_0039}}
+|}
+
+===''nuwana'', &quot;maybe&quot;===
+{| class=&quot;interlinear&quot;
+!na || meta || kabo || '''nuwana''' || sine || ye || gelu
+|-
+|and.then || PART || will/then || maybe || woman || 3SG.SUBJ || board
+|-
+| colspan=&quot;20&quot;| And with that a woman may board. {{Example|Saliba|CanoeBuilding_01BC_0031}}
+|}
+
+===''kabo'' &quot;will/then&quot;===
+
+{| class=&quot;interlinear&quot;
+! loan.word || ena || sine || hesau || ye || lau || -ma || ye || gelu || meta || '''kabo''' || i || gelu
+|-
+|loan.word || if || woman || other || 3SG.SUBJ || go || -to.SPKR || 3SG.SUBJ || board || PART || will/then || 3SG.SUBJ || board
+|-
+| colspan=&quot;20&quot;| Anytime when another women comes to board then she may board. {{Example|Saliba|CanoeBuilding_01BC_0099}}
+|}
+
+===''madai'', &quot;lest/otherwise&quot;===
+
+{| class=&quot;interlinear&quot;
+!mata || wuwu || -na || like || '''madai''' || se || mwaloi
+|-
+|eye || root/foot.of.tree || -3SG.POSS || seed || lest/otherwise || 3PL.SUBJ || dead/die
+|-
+| colspan=&quot;20&quot;| because otherwise the seedlings may die, {{Example|Saliba|Customs_01DS_0054}}
+|}
+
+==Past assertion==
+
+*''wau'', &quot;now, this, today&quot;
+*''wa''
+{| class=&quot;interlinear&quot;
+!'''wau''' || ye || tam || dup- || he- || momo || -na || '''wa'''
+|-
+|now/this/today || 3SG.SUBJ || squeeze || DUP- || CAUS- || greasy || -3SG.POSS || Past/Subordination?
+|-
+| colspan=&quot;20&quot;| their sister had squeezed plenty of coconut {{Example|Saliba|Tautolowaiya_01AG_0100}}
+|}
+
+==Hypothetical==
+===''doha'', &quot;like&quot;===
+
+{| class=&quot;interlinear&quot;
+!ye || wane || tamowai || '''doha''' || ne || ku || woya || -i || -ya || -ma || ne
+|-
+|3SG.SUBJ || say || person || like || DIST || 2SG.SUBJ || lead || -TR || -3SG.OBJ || -to.SPKR || DIST
+|-
+| colspan=&quot;20&quot;| she said, &quot;it is as if you have brought a human being hither.&quot; {{Example|Saliba|BudoiNualele_02CY_0415}}
+|}
+
+==Negation==
+===''tabu'', NEG===
+{| class=&quot;interlinear&quot;
+!'''tabu''' || sine || ye || gelu || -i
+|-
+|NEG || woman || 3SG.SUBJ || board || -TR
+|-
+| colspan=&quot;20&quot;| For a woman should not board a fishing canoe {{Example|Saliba|CanoeBuilding_01BC_0053}}
+|}
+
+===''nige'', NEG===
+{| class=&quot;interlinear&quot;
+!taba || '''nige''' || yama || ku || katu || -i
+|-
+|IRR || NEG || fish || 2SG.SUBJ || catch || -TR
+|-
+| colspan=&quot;20&quot;| You would catch no fish. {{Example|Saliba|CanoeBuilding_01BC_0061}}
+|}
+
+==Other==
+===''taba'', IRREALIS===
+{| class=&quot;interlinear&quot;
+!se || iyala || hai || na || nige || ye || mwasiyou
+|-
+|3PL.SUBJ || fight || get/take || and.then || NEG || 3SG.SUBJ || smoke
+|-
+| colspan=&quot;20&quot;| They fought, but if there was no smoke {{Example|Saliba|Taukulupokapoka_01AG_0084}}
+|}
+{| class=&quot;interlinear&quot;
+!'''taba''' || nige || se || lao || se || iyala || meta || se || mwaloi
+|-
+|IRREALIS? || NEG || 3PL.SUBJ || go || 3PL.SUBJ || fight || discours.part || 3PL.SUBJ || dead/die
+|-
+| colspan=&quot;20&quot;| they wouldn't go and fight because then they would die. {{Example|Saliba|Taukulupokapoka_01AG_0085}}
+|}
+
+{| class=&quot;interlinear&quot;
+!meta || '''taba''' || nige || false.start || sine || gaibu || yo || gelu
+|-
+|PART || IRR || NEG || false.strt || woman || just.like.that || and || board
+|-
+| colspan=&quot;20&quot;| Thus a woman should not board. {{Example|Saliba|CanoeBuilding_01BC_0034}}
+|}</text>
+      <sha1>qfrvruy2q8h2czvzubazo41ihgvt5og</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Saliba examples</title>
+    <ns>0</ns>
+    <id>33</id>
+    <revision>
+      <id>285</id>
+      <parentid>280</parentid>
+      <timestamp>2016-05-02T08:42:16Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>/* Nogi_01AQ_0097 */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1056">==Nogi_01AQ_0097==
+
+{| class=&quot;interlinear&quot;
+|-
+!'''aga''' || '''hesau''' || ya || ginauli || kabo || ku || kita || na || nige || hesau || ya || ginauli
+|-
+|if || a || 1SG.SUBJ || make || will/then || 2SG.SUBJ || see || and.then || NEG || a || 1SG.SUBJ || make
+|-
+| colspan=&quot;20&quot;| If I had made one you could see it, but I didn't make one. {{Example|Saliba|Nogi_01AQ_0097}}
+|}
+
+{{Tamp|clause=embedded | subtype=conditional | reported=no |  time=past| mood=counterfactual| flavor|event=perfective}}
+
+==BudoiNualele_01CY_0523==
+
+{| class=&quot;interlinear&quot;
+!'''madai''' || ku || dup- || lau || kabo || ye || wane || si || unui || - || he- || mate || -go
+|-
+|lest/otherwise || 2SG.SUBJ || DUP- || go || will/then || 3SG.SUBJ || say || 3PL.SUBJ || catch || - || CAUS- || dead/die || -2SG.OBJ
+|-
+| colspan=&quot;20&quot;| &quot;if you keep on going (to them)&quot;, he said, &quot;they will get hold of you and kill you&quot;, {{Example|Saliba|BudoiNualele_01CY_0523}}
+|}
+
+{{Tamp|clause=embedded | subtype=conditional | reported=no | time=future|reference| mood=possible| flavor|event=imperfective}}</text>
+      <sha1>nxmtks1zqt2dh1ccbprxfp2odu2i3he</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Sequence</title>
+    <ns>0</ns>
+    <id>48</id>
+    <revision>
+      <id>440</id>
+      <parentid>439</parentid>
+      <timestamp>2016-06-22T09:59:43Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1171">It appears that in the project languages, the idea of a sequence of events plays a major role. In Saliba, the expression ''kabo'' is used for expressions referring to the future, the generic present and for abilities. But it also appears to mark events that come after other events in a sequence:
+
+{| class=&quot;interlinear&quot;
+ |-
+ ! se   ||     kai- ||  kai||  tamowai||  maudoi||  -na    ||    wa  ||  se   ||     kai- ||  kai 
+ |-
+ | 3PL.SUBJ  || DUP-  ||  eat  || person  ||  all.of  || -3SG.POSS ||  ANA ||   3PL.SUBJ  || DUP-  ||  eat
+ |}
+{| class=&quot;interlinear&quot;
+ |-
+ ! ye   ||     lau || boga   ||  -di    ||        wa  ||  ye || sese  ||   '''kabo'''   ||    se     ||   wane   
+ |-|| 
+ | 3SG.SUBJ ||  go   || stomach ||  -3PL.OBJ/POSS  || ANA  ||  3SG.SUBJ  || swollen  || will/then ||  3PL.SUBJ  || say     
+ |-
+ | colspan=&quot;20&quot; | they (the village people) were eating, all of them were eating until their bellies were full, and then they said:{{Example|Saliba|BudoiNualele\_01CY\_0470}}
+ |}
+
+Likewise, the two prospective markers in South Efate appear to express a contrast between situations, often in a sequence, which can usually be paraphrased as ''but/and then''.</text>
+      <sha1>tit273wy5cfmxktrsozmarppzr3qxxf</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>South Efate</title>
+    <ns>0</ns>
+    <id>40</id>
+    <revision>
+      <id>548</id>
+      <parentid>547</parentid>
+      <timestamp>2017-03-01T15:20:59Z</timestamp>
+      <contributor>
+        <username>Fruehauf</username>
+        <id>9</id>
+      </contributor>
+      <comment>hinzugefügt mood/transitivity correlations</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="10902">Within the scope of a research seminar, a group of four students worked on the following research questions:
+
+* How to temporal adverbs interact with TAM-makers?
+* How do coordinations interact with TAM-markers?
+
+
+A group of two students focused on the following research question:
+
+* How do mood and transitivity correlate? 
+
+
+== Adverbs and TAM-markers ==
+
+We considered the following temporal adverbs to be taken into account: 
+
+Anteriority: ''nanom'' 'yesterday'; ''nrak'' 'long ago', 'in those days'; ''malpei'' 'before', 'a long time ago'
+
+Present: ''mees' 'today'; ''malfane'' 'now', 'at the time of'
+
+Posteriority: ''matol'' 'evening', 'tomorrow', 'the future'; ''inrok'' 'after', 'behind'
+
+The studied adverbs do not occur evenly. For instance, out of 199 occurences in total ''malfane'' shows the highest count (81), followed by mees (67). ''nanom'' (2) and ''nrak pei'' (3) display the fewest occurences. All in all, there is more references to present events (74%) than to past (17%) or future (9%) happenings.
+
+=== Results ===
+
+As it comes to anteriority reference the results are clearly as expected. There is more realis (93) than irrealis subject proclitics when in combination with adverbs refering to anteriority.
+
+Considering posteriority the adverb ''matol'' 'evening', 'tomorrow', 'the future' shows a clear bias to irrealis aspect (no realis but 9 irrealis subject proclitics).
+''inrok'' 'after', 'behind', 'later', however, the distribution is almost balanced (14 realis, 17 irrealis). 
+This could be due to differences in the usage of both adverbs. ''matol' refers to prospective events only, while ''inrok'' can refer to both past and prospective events.
+This can be illustrated by following examples:
+
+{| class=&quot;interlinear&quot;
+|-
+! me  || kineu || ka=    ||    '''inrok'''
+|-
+| but || 1S. || 1S.IRS= ||  behind
+|-
+| colspan=&quot;4&quot; | &quot;I will come behind.&quot; (South Efate corpus id 046.005)
+|}
+
+{| class=&quot;interlinear&quot;
+|-
+! me  || '''inrok''' || knen    ||    go || u= || po || pam̃or || -i
+|-
+| but || behind || of_it ||  and || 1P.exRS= || PSP || find || -TS
+|-
+| colspan=&quot;8&quot; | &quot;But later we found that it was wrong.&quot; (South Efate corpus id 068.024)
+|}
+
+Regarding the third category present, there is far more realis (607) than irrealis (101) subject proclitics. There is also a number of perfect subject proclitics (36) as well as occurences of the perfect marker ''pe'' (23) though, which seems odd:
+
+{| class=&quot;interlinear&quot;
+|-
+! go  || '''mees''' || ui=    ||    '''pe''' || fri
+|-
+| and || today || 1P.exPS= ||  PS || free:BI= 
+|-
+| colspan=&quot;5&quot; | &quot;And today we are free.&quot; (South Efate corpus id 068.025)
+|}
+
+As the example shows, the time reference is present tense, yet the perfect subject proclitic and the perfect marker are used. Thieberger (2006:168) notes that &quot;[t]he particle ''pe'' can also encode an ongoing state that has been achieved.&quot; This seems to be the case in the shown example.
+
+
+== Coordinations and TAM-markers ==
+
+We focused on 3 coordinations: ''ale'' 'then', ''go'' 'and' and ''me'' 'but, and'.
+
+
+
+===Results===
+It seems that ''go'' occures most of the time with either the prospective irrealis ''fo'' or the realis counterpart ''po''.
+
+Considering the coordination ''me'', again the prospetive irrealis co-occures the most, followed by the perfective marker ''pe''.
+
+As is comes to the third examined coordinatiin ''ale'', there are way too less co-occurences to sign for a trend.
+
+==== me ====
+
+''me'' primary serves mostly as a conjunction meaning 'and' or 'but', but it seems to quite often occur in somehow temporal surroundings.
+
+{| class=&quot;interlinear&quot;
+|-
+! '''me'''  || tafra || ru=    ||    '''po''' || inrok || mai 
+|-
+| and || whale || 3P.RS= ||  PSP || behind || come
+|-
+| colspan=&quot;6&quot; | &quot;But the whales will come later.&quot; (South Efate corpus id 023:008)
+|}
+
+{| class=&quot;interlinear&quot;
+|-
+! '''me'''  || p?a= || '''fo'''    ||    to || mai || maileperkat || emat || nigneu
+|-
+| and || 2S.IRS= || PSP:IR ||  stay || come || watch_over || grave || nigneu
+|-
+| colspan=&quot;8&quot; | &quot;And you will come to look after my grave.&quot; (South Efate corpus id 023:008)
+|}
+==== ale ====
+
+In the corpus ''ale'' does only occur with two of the four markers, ''fo'' and ''po''.
+''Ale'' and ''po'' can either occur in the same clause or in different clauses of the same utterance.
+Two examples showing the first case:
+{| class=&quot;interlinear&quot;
+|-
+! '''ale'''  || afsak || i=    ||    '''po''' || tu || of || pak || elag
+|-
+| okay || turtle || 3S.RS= ||  PSP || give || heron || to || above 
+|-
+| colspan=&quot;8&quot; | &quot;Then the turtle gave it to the heron above.&quot; (South Efate corpus id 105.060)
+|}
+
+{| class=&quot;interlinear&quot;
+|-
+! '''ale'''  || i= || i=    ||    '''po''' || nom 
+|-
+| okay || 3S.RS= || PSP ||  finish 
+|-
+| colspan=&quot;4&quot; | &quot;And that's the end.&quot; (South Efate corpus id 100:011)
+|}
+
+A example showing the latter case:
+
+{| class=&quot;interlinear&quot;
+|-
+! '''ale'''  || Litapurog || i=    ||    pes ||i=|| pes ||emrom|| i=|| '''po''' || pesta || rait || -e || -n || pak || elagf
+|-
+| okay || Litapurong || 3S.RS=||  talk  ||3S.RS= || talk || inside || 3S.RS= || PSP || talk_to || mother || -V || -3S.DP || to || high
+|-
+| colspan=&quot;15&quot; | &quot;So Litapurong spoke, she spoke inside, she talked to the mother up above.&quot; (South Efate corpus id 096:021)
+|}
+
+''Ale'' and ''fo'' can also appear either in the same clause or in different clauses of the same utterance.
+
+First case:
+
+{| class=&quot;interlinear&quot;
+|-
+! '''ale'''  || malfane || pa=    ||    '''fo''' || ler || naoia || yu  || mas || kam || bak
+|-
+| okay || now || 2S.IRS= ||  PSP:IR || return || now:BI || you:BI || must:BI || come:BI || back:BI
+|-
+| colspan=&quot;10&quot; | (South Efate corpus id 096.021)
+|}
+
+== Impacting factors for mood correlations ==
+
+=== Stem mutation and transitivity in South Efate ===
+
+South Efate is one of a group of Vanuatu languages that displays stem-initial mutation. A small group of verbs changes the initial consonant to reflect mood. The
+fortis stem mutation (/p/) is associated with realis, the lenis stem mutation (/f/) is associated with irrealis.
+Thieberger (2012) found that the stem mutation also correlates with transitivity. He argues that the realis form occurs whenever there is an overt object expression.
+The irrealis form, on the other hand, occurs whenever there is no object in the clause.&lt;ref&gt;Thieberger, N. (2012). Mood and transitivity in South Efate.''Oceanic Linguistics 51(2)'', 387–401.&lt;/ref&gt;
+
+=== Research question ===
+
+Rijkhoff and Seibt (2005) note that mood and definiteness (with specificity) share conceptual similarities. Both realis and definite marking entail that an entity is
+already “grounded in the world of discourse”, while irrealis and nonspecific-indefinite elements mark the opposite, namely that the entity is not grounded.&lt;ref&gt;Rijkhoff, J. and J. Seibt (2005). Mood, definiteness and specificity: a linguistic and a philosophical account of their similarities and differences. ''Tidsskrift for Sprogforskning 3(2)'', 85–132.&lt;/ref&gt;
+In our corpus study, we examined whether the occurence/absence of an overt object is the sole predictor of the stem change. 
+As possible influencing factors we examined the presence of an overt object, the definiteness/specificity of that object, the complement clause type as well as the
+presence of the transitive/transitivizing suffix. 
+
+
+=== Results ===
+
+In total, we found 18 different verbs with stem mutations that occurred in 56 instances of mismatches. Of those, 13 had an object (lexical NP or pronominal suffix).
+
+Here are three of the examples we would not expect if the absence of an object was the sole predictor of the irrealis stem form: 
+
+{| class=&quot;interlinear&quot;
+|-
+! Me  || ser || nrak || nen || kin || '''rufreg kapu''' || rupus altuk
+|-
+| colspan=&quot;7&quot; | &lt;nowiki&gt;'But every time they made laplap the put island cabbage'&lt;/nowiki&gt; (South Efate corpus id ??)
+|}
+
+We have the form mismatch despite there being an overt object. Due to the habitual reading of the sentence, the object cannot be interpreted as a specific-definite object. Thus, the correlation of the habitual reading and non-specific indefinite object might bring about the irrealis verb form here and this is evidence that the absence of an object alone cannot account for the mismatch.
+
+{| class=&quot;interlinear&quot;
+|-
+! go  || i= || na    ||  Webe || naik || seserik || '''ru=''' || '''mai''' || '''kai='''|| '''fam''' || '''lu''' || '''nafnag'''  || wi || pan 
+|-
+| and || 3S.RS= || say ||  p.name || fish || small || 3P.RS= || come || ES= || eat || completely || food || good || go
+|-
+| colspan=&quot;14&quot; | &lt;nowiki&gt;'and he said, Webe, small fish they come and eat all the good food.'&lt;/nowiki&gt; (South Efate corpus ??)
+|}
+
+From the translation of, one might conclude that there is a perfect case of an object. And in fact, in his short discussion of ''lu'', Thieberger writes: “The verb ''lu''
+encodes increased affectedness of the object, typically its relocation, consumption or
+destruction, and so it is glossed as &lt;nowiki&gt;'completely'&lt;/nowiki&gt;.”&lt;ref&gt;Thieberger, N. (2005). ''A grammar of South Efate: an Oceanic language of Vanuatu.''
+Honolulu: University of Hawaii Press, p. 232&lt;/ref&gt; The object then would be definite non-specific (with faith in the translation) which might play
+a role in the stem change.
+
+{| class=&quot;interlinear&quot;
+|-
+! ru=  || wi || ru=    || semsem || lek || patlas || nata˜mol || me || ru= || traef || mai || ko  || '''ru='''    || '''fatlas''' || '''-i''' || '''-k''' || ru || msag || -i || -k
+|-
+| 3P.RS= || good || 3P.RS= ||  happy || look || meet || person || and || 3P.RS) || drive:BI || come || or || 3P.RS= || meet:IR || -TS || -2S.O || 3P.RS= || fetch || -TS || -2S.O
+|-
+| colspan=&quot;20&quot; | &lt;nowiki&gt;'they were good, they were happy to meet any man. They come driving or they meet you or they take you'&lt;/nowiki&gt; (South Efate corpus ??)
+|}
+
+
+Here we have three possible actions that &lt;nowiki&gt;'they'&lt;/nowiki&gt; might take: come driving, meeting you or taking you. All three of them come with the realis proclitic. 
+Two of them specify an object of the action by means of an object suffix. And one of them is a stem change verb that occurs with the irrealis form. 
+Under the assumption that the speaker says something generic about &lt;nowiki&gt;'them'&lt;/nowiki&gt;, the second person object should be
+interpreted as non-specific &lt;nowiki&gt;'you'&lt;/nowiki&gt; which would be in line with our other observations.
+
+=== Conclusion ===
+
+The analysis of the examples has shown that Thiebergers assumptions can explain most of the examples. Still, there are a few examples that do not appear to be in
+line with his transitivity hypothesis. After looking into specificity and definiteness correlations with respect to mood, we conclude that the type of object might well
+have an influence on the occurrence of proclitic and verb form mismatches. But because of the small number of examples in the corpus, we cannot derive conclusive results.	
+
+
+&lt;references	/&gt;</text>
+      <sha1>iuekwoydx08157jzyo3pqqwovw0hqum</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Tag set problems</title>
+    <ns>0</ns>
+    <id>50</id>
+    <revision>
+      <id>472</id>
+      <timestamp>2016-09-16T08:44:06Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <comment>Die Seite wurde neu angelegt: „==Inclusion of Reichenbach's distinctions== Languages differ in whether they show ''sequence of tense'' effects and in whether the tense in the embedded clause…“</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="354">==Inclusion of Reichenbach's distinctions==
+Languages differ in whether they show ''sequence of tense'' effects and in whether the tense in the embedded clause is relative to the matrix (reference time) or relative to the utterance time. We should probably at the very least have the option to encode the relation between R, E and S/U, maybe as keywords.</text>
+      <sha1>3g8sc7c70ovkc376xueh19o86hlbvvn</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Tagset</title>
+    <ns>0</ns>
+    <id>38</id>
+    <revision>
+      <id>713</id>
+      <parentid>711</parentid>
+      <timestamp>2019-03-18T14:37:12Z</timestamp>
+      <contributor>
+        <username>Tjukaann</username>
+        <id>11</id>
+      </contributor>
+      <comment>/* Tags for clause-level annotation */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5311">==Tags for clause-level annotation==
+
+{| class=&quot;wikitable sortable&quot; 
+|-
+! Categories !! Name !! Values
+|-
+| [[Clause types|Clause type]] || clause || (main):  '''{{Tagname|assertion}}''' (default), {{Tagname|question}}, {{Tagname|directive}}; embedded: {{Tagname|proposition}}, {{Tagname|conditional}}, {{Tagname|e.question}}, {{Tagname|temporal}}, {{Tagname|adverbial}}, {{Tagname|attributive}}
+|-
+| [[Temporal reference#Temporal domain|Temporal domain]] || time || {{Tagname|past}}, {{Tagname|future}}, {{Tagname|present}}
+|-
+| [[Modal domain]] || mood ||  {{Tagname|factual}}, {{Tagname|counterfactual}}, {{Tagname|possible}}
+|-
+| [[Event structure]] || event || {{Tagname|bounded}}, {{Tagname|ongoing}},  {{Tagname|repeated}}, {{Tagname|stative}}
+|-
+|[[Polarity]] || polarity ||  '''{{Tagname|positive}}''' (default), {{Tagname|negative}}
+|}
+
+===Incompatabilities===
+* {{Tagname|future}} is incompatible with {{Tagname|factual}}
+* {{Tagname|present}} is incompatible with {{Tagname|bounded}}
+* With generics, it's not quite clear whether they are factual or possible (He sells vacuum cleaners. -- How many has he sold? -- None so far.) Consider the following two examples. The first sentence about a snake does not seem to imply that these snakes ever actually get very hungry, while the second sentence about the owl certainly implies that it is sometimes dawn. Or is that a function of world knowledge?
+
+{| class= &quot;interlinear&quot;
+|-
+! ma ||   kuowilye|| ka ||  we  || seling || myane,|| ka ||  myaa  || te  ||  ate || ten
+|-
+| REAL||  know  ||    MOD || POT || descend || with ||   COMP||  hunger || DIST || bite||  very
+|-
+|colspan=&quot;20&quot;| It can go down for them, when it's very hungry (DAA.6043)
+|}
+
+{| class= &quot;interlinear&quot;
+|-
+! ka ||   or  ||   te  ||   yuop  ||   te  ||   nge||  mwe  ||  vyan || pwe ||   pwer || myaek
+|-
+| MOD  ||  place  || DIST ||  be.dawn ||  DISC ||  3s  ||   REAL ||  go   ||  CONT  || stay ||  be.night
+|-
+| colspan=&quot;20&quot; | At dawn, it goes to sleep. (DAA.0498)
+|}
+
+===Prioritization===
+
+We are not aiming to exhaust the possible combinations of those tag values for each corpus (which would give us 1800 different contexts). Instead, I will list below the most important distinctions we should try to tag according to clause type:
+
+{| class=&quot;wikitable&quot; style=&quot;text-align:right;&quot;
+|-
+! Clause type !! Time !! Mood !! Event !!  Polarity !! Total
+|-
+| Assertion || 3 || 3 || 5 ||  2 || 180
+|-
+| Question || 3 || 1 || 1 || 2 || 6
+|-
+| Directive || 1 || 1 || 1 || 2 || 2 
+|-
+| Other || 0 || 0 || 0 || 0  || 0
+|- 
+| Proposition || 3 || 3 || 1 ||  2 || 18
+|-
+| E.question || 3 || 1 || 1 || 1 || 3
+|-
+| Conditional || 3 || 2 || 1 || 2 || 12
+|-
+| Temporal || 3 || 2 || 1 ||  1 || 6
+|-
+| Adverbial || 3 || 3 || 1 || 1 || 9
+|- 
+| Attributive || 3 || 1 || 1 || 2 || 6
+|-
+| colspan=&quot;5&quot;  style=&quot;text-align:left&quot; | '''Total''' || '''232''' 
+|}
+
+In addition to the obligatory tags, we will use [[Keywords|keywords]] to keep track of properties that are very relevant to our questions, but may only apply to a subset of clauses. Related questions that we will not track systematically through tags include the following:
+
+*Embedded questions: How are embedded polarity questions formed? 
+*[[Modal flavor]] and [[Modal force]]: How are certain modal meanings expressed that correspond to modal auxiliaries of Indo-European languages such as ''must'' and ''can''?
+*Adverbial clauses: What types of adverbial clauses do we find?
+*[[Directives]]: are they restricted to second-person subjects?
+*Structure of texts and discourse: are there TAM frame setters?
+
+=== Clause segmentation and annotation ===
+
+To facilitate annotations on parts of a sentence, i.e., on spans of more than one token which may be smaller than the whole sentence (&amp;quot;ref&amp;quot;, after the respective Toolbox default marker &lt;code&gt;\ref&lt;/code&gt;), we have introduced &amp;quot;subref&amp;quot; annotations, which define the span which they apply to via the indices of the tokens it includes.
+
+There are different types of subref annotations (legend further below in section [Legend]), of which &quot;identified&quot; types can be used to use different subref spans within the same ref.
+
+For more details, see [[Clause segmentation and annotation]].
+
+
+
+=== Metadata categories ===
+{| class=&quot;wikitable&quot; 
+|-
+! Categories !! Name !! Values
+|-
+|[[Notes]] || nt ||  Free text
+|-
+| [[Certainty]] || ct ||  
+|-
+| [[Age]] || age || Birthyear of participant
+|-
+| [[Gender]] || gen || Gender of participant
+|-
+| [[Storyboard]] || storyboard || Title of the storyboard which was used in elicitation, eg. Woodchopper
+|-
+| [[Frame number]] || frame || Title plus number of the frame, eg. StoryboardsWoodchopper01
+|-
+| [[PDF pagenumber]] || ppdf || Number of the PDF page
+|-
+| [[DOI]] || sbdoi || Storyboard DOI with resolver prefix (https://doi.org/)
+|}
+
+==Text-level tags==
+
+{| class=&quot;wikitable&quot; 
+|-
+! Categories !! Name !! Values
+|-
+|[[Genre]] || gn ||  {{Tagname|story}}, {{Tagname|explanation}}, {{Tagname|conversation}}, {{Tagname|report}}, {{Tagname|speech}}
+|-
+| [[Synopsis]] || syn || {{Tagname|free text}}
+|-
+|[[Filter]] || filter || {{Tagname|no translation}}, {{Tagname|prime}}
+|}
+
+==\ref-level tags==
+
+{| class=&quot;wikitable&quot; 
+|-
+! Name !! Description
+|-
+|\rtx || Retained \tx line, i.e., the original \tx line, untokenized, normalized for whitespaces
+|}</text>
+      <sha1>1ui2zv4kfpksvusm0d7a9h08m3o9dco</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Task list</title>
+    <ns>0</ns>
+    <id>51</id>
+    <revision>
+      <id>475</id>
+      <parentid>474</parentid>
+      <timestamp>2016-09-19T06:41:57Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="482">{| class=&quot;wikitable&quot;
+|-
+! Task !! Responsibility !! Status
+|-
+! Overview SE 
+|| Ana || Completed
+|-
+! Importer
+|| Stephan || First version
+|-
+! Overview Saliba 
+|| Kilu || Completed
+|-
+! Tagset 
+|| Kilu || Completed
+|-
+! Tagset vs. Dahl 
+|| Kilu, Ana || Completed
+|-
+! Corpus composition 
+|| Ana, Kilu, Manfred || Open
+|-
+! Tagset test 2 
+|| Ana, Manfred, Kilu || Open
+|-
+! Tagging each language
+|| Kilu, Ana, Manfred || Open
+|-
+! Analysis 
+|| Kilu, Ana, Manfred, Stephan || Open
+|}</text>
+      <sha1>bzjwxoudzsuark6fexoru48f1zuhpk7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Temporal reference</title>
+    <ns>0</ns>
+    <id>19</id>
+    <revision>
+      <id>600</id>
+      <parentid>522</parentid>
+      <timestamp>2017-06-14T12:18:42Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="6532">Temporal reference is one of the main categories to be tagged. The corresponding category in the [[Tagset|tagset]] is {{Tagname|time}}.
+The three possible values for the temporal domain tag are {{Tagname|present}}, {{Tagname|past}} and {{Tagname|future}} and are further explained below. 
+
+==Temporal domain==
+
+The three main temporal domains are '''present''', '''past''' and '''future'''. They are defined relative to a given moment, the '''reference time''', by default the time of speaking. In complement clauses, we will assume that the reference time is the time of the matrix event.
+In the Oceanic languages of Melanesia, the present is often encoded in the same way as the past. The present tense is typically restricted to certain kinds of event structure - it is famously incompatible with perfective aspect.&lt;ref&gt;Bhat 1999. The Prominence of Tense, Aspects, and Mood. John Benjamins&lt;/ref&gt;. Therefore, if the event structure is bounded, the temporal reference is typically not present. A possible exception are performatives such as the following:
+
+* ''Here the story ends.'' ({{Tagname|present}}, {{Tagname|bounded}})
+
+In unembedded clauses, classifying temporal reference is usually straightforward:
+
+* ''Neil went to the zoo.'' (past)
+* ''Neil is going to the zoo.'' (present)
+* ''Neil will go to the zoo.'' (future)
+
+For '''generic''' sentences without explicit reference to the past or future, we choose the label {{Tagname|present}}:
+
+* ''Neil used to go to the zoo.'' (past)
+* ''Neil goes to the zoo (every Sunday).'' (present)
+* ''Neil will go to the zoo (every Sunday).'' (future)
+* ''When/if a flight is cancelled, you get reimbursed.'' (present)
+
+In embedded sentences, we will classify the temporal orientation of the embedded clause as relative to the time of the matrix clause, not to the utterance time.
+
+* ''I knew [she would get the job].'' (future)
+* ''She wants him [to pass the test].'' (future)
+* ''She will think [he had had a bad day].'' (past)
+
+Tense in reported speech is treated like embedded clauses, even if it is not explicitly marked as embedded. This means that reported imperatives, for example, are tagged as referring to the future:
+* She said: &quot;Wash your hands!&quot; ({{Tagname|future}})
+* He said: &quot;I will wash my hands.&quot; ({{Tagname|future}})
+
+==Other categories==
+===Reference time===
+Reference time may be different from the time of utterance. We will not explicitly tag this category, since it does not appear to be marked systematically in our subject languages, but we should keep in mind that it may still play a role. A brief description is added below to illustrate the phenomenon.
+Temporal meanings are relative to a given reference point. This reference point may be absolute (deictic) or relative (non-deictic). A non-deictic reference point is determined in relation to another event in the same discourse, usually the same sentence. For ease of exposition, we will use the Reichenbachian labels '''E''' (event time), '''R''' (reference time) and '''S''' (speech time).
+
+* ''Having prepared dinner'', Kim proceeded to '''set the table'''
+* By '''3 o'clock''', ''Sue had already arrived''.
+
+In the first example, the dinner preparation (E) is in the past not only relative to the time of utterance (S), but relative to the setting of the table (R) — which itself is in the past relative to S (E &lt; R &lt; S). In the second example, ''3 o'clock'' serves as the reference time. By default, R and S are identical and do not need to be differentiated. A reference time that is independent from the utterance time is typically introduced by composite forms involving a participle or similar. Non-deictic forms are not widely attested in Oceanic languages, but we should retain the option to identify them if we come across them.
+
+For the deictic, or absolute, tenses, the default reference time of a main clause is the time of utterance. For an embedded clause, however, the default reference time is the time of the event in the matrix clause. So, the temporal orientation of the embedded clauses of the following examples will be classified as future, even though the described events may have taken place before the time of utterance. In both of the following two examples, therefore, the reference time R is identical with S, the temporal orientation is classified as future:
+
+* ''I wanted [to arrive early]'' 
+
+* ''She knew that [she would miss the train]''
+
+Yet another case of a deictic tense that does not use the time of utterance as its reference time is the narrative present, as illustrated in the following example.
+
+*''Smith was sitting perfectly still behind her rifle. She had spent the entire night setting up with just the right angle for the perfect view on the plaza. She took another look through the lens. A woman was pushing a stroller. A sparrow left the ground fluttered to a nearby tree. [Suddenly, there '''is''' a commotion at the corner of her vision]. She '''moves''' the lens ever so slightly to get a better look...''
+
+In this case, the assumption is that the speech time S has been shifted to the past viewpoint. Such a sentence would therefore be labelled as referring to the present, the reference time R is simultaneous with S.
+
+
+===Discontinuity===
+
+In many languages, specific markers can have an interpretation that does not simply refer to the past, but signals a certain discontinuity between the past and the present with respect to the described event – something used to be the case, but is no longer the case.
+&lt;ref&gt;V. A. Plungian and J. van der Auwera (2006). Towards a typology of discontinuous past marking. Sprachtypologische Universalienforschung  59,  317-349.&lt;/ref&gt;
+
+This is also true for the Daakaka distal when used with reference to the actual past:
+
+{| class=&quot;interlinear&quot;
+|-
+! meu=an||  na||  nenyu || '''te'''||  melumlum,||  melumlum, || a||  meu=an || na || doma || mwe || yas 
+|-
+|  live=NM || ATT||  yesterday || DIST||  quiet||  quiet||  but || live=NM||  ATT||  today || REAL || hard 
+|-
+| colspan=&quot;20&quot; | `the life of before was easy, it was easy, but the life of today is hard'	{{Example|Daakaka|con02:90}}
+|}
+
+We will not note this specifically in the tagset, but we should be watchful of signs of discontinuous interpretations and make notes when or if we find them.
+
+===Graded tenses===
+
+Some languages show graded tenses, distinguishing between the near and the more remote past or future. We do not expect to find this in our subject languages but will be mindful of the possibility.
+
+==References==
+&lt;references /&gt;</text>
+      <sha1>qi6umx7ghtelad9hov7yqk3xnec4hmy</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>The tagset in relation to the SE Dahl questionnaire</title>
+    <ns>0</ns>
+    <id>46</id>
+    <revision>
+      <id>411</id>
+      <parentid>406</parentid>
+      <timestamp>2016-06-07T08:02:35Z</timestamp>
+      <contributor>
+        <username>Princevk</username>
+        <id>2</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="3732">Mostly, the [[Tagset|tagset]] matches the South Efate data when compared via the Dahl questionnaire: Almost every difference between South Efate constructions corresponds to a different combination of values in the tagset.
+
+There are some exceptions, which are discussed on this page.
+
+===HABIT-related===
+
+In two cases, there is a sequence of sentences referring to a generic scenario, where the first sentence is marked by habitual/ continuous marker ''to'', but the subsequent sentences do not contain this marker:
+
+{| class=&quot;interlinear&quot;
+|-
+!a= || '''to''' || lek || m̃at || i= || skei  
+|- 
+|1sgRS= || HABIT || look || snake || 3sgRS= || one
+|-
+|colspan=&quot;20&quot; | (191)(B6) [1'1I tell you what happens to me sometimes 
+when I am walking in the forest.] (191) I SEE a snake.
+|}
+{{Tamp|clause=assertion |  time=present| mood=actual |event=repeated }}
+
+ {| class=&quot;interlinear &quot;
+ |-
+!a= || slat || fat || i= || skei-n
+|-
+|1sgRS= || carry || stone || 3sgRS= || one-3sgO
+|-
+| colspan=&quot;20&quot; |  (192) I TAKE a stone and THROW at the snake.
+|}
+{{Tamp|clause=assertion |  time=present| mood=actual |event=repeated | sequence=yes?}}
+
+{| class=&quot;interlinear&quot;
+!ra=  ||   '''to'''  ||   mes ||  napu 
+|-
+| 3d.RS= || HABIT || play || road
+|-
+|colspan=&quot;20&quot; | (B8) [I'll tell you what I see in the window right now.] (195) A
+boy and a girl PLAY in the street.
+|}
+{{Tamp|clause=assertion |  time=present| mood=actual |event=ongoing}}
+
+{| class=&quot;interlinear&quot;
+|-
+! malfanen || nanwei || i= || sat || ball || go || i= || nep || ki || -n || tu || nmatu || 
+|- 
+|now || man || 3sgRS= || sat || ball || and || 3sgRS= || throw || PREP || -3sgO || give || female || 
+|-
+|colspan=&quot;20&quot; |(196) (Right now) the boy TAKE a ball and THROW it to the girl.
+ |}
+
+{{Tamp|clause=assertion |  time=present| mood=actual |event=ongoing | sequence=yes?}}
+
+
+The tagset would not show a difference between these sentences, unless one chose to set the value for {{Tagname|sequence}} as ''yes'' in the second clause.
+
+
+
+(55)  
+{| class=&quot;interlinear&quot;
+|-
+! ore||  i='''po'''  ||   fe  ||  silu ||  natus||  ne  ||  tefla || ru=nrik-i=n||  kin || ki
+|-
+| yes || 3sgRS=PSP:R || read || all || paper || this||  similar || 3p.RS=tell-TR=DST || COMP || PREP
+|-
+| colspan=&quot;20&quot; | (55) [Q: Your brother DO what his teacher told him to do today?] (Yes)
+he READ (all of) this book (as he was told)
+|}
+
+This sentence is tagged in the following way:
+{{Tamp|clause=assertion |  time=past| mood=actual |event=completed | sequence=yes}}
+
+The same values also apply for other simple, completed events in the actual past, but usually those do not involve the prospective. I think the use of the prospective marker here is conditioned by the subsequent sentence (as he was told) to clarify that the command came first and the reading came later. In order to capture this, I included the category {{Tagname|sequence}}. 
+
+Something similar seems to be going on with the following two sentences. Again, the difference here can be captured by the category of {{Tagname|sequence}}.
+
+{| class=&quot;interlinear&quot;
+|-
+!malnen a=mai pak e-sum̃ || nanom || i= || '''po''' || to || mtir || natus || i= || nru 
+|- 
+ |as 1sgRS=come to LOC-house || yesterday || 3sgRS= || PSP:R || HABIT || write || paper || 3sgRS= || two 
+|-
+|colspan=&quot;20&quot; | (137) When I COME home (yesterday), he WRITE two letters (=first I came and then he wrote the letters)
+|}
+
+{| class=&quot;interlinear&quot;
+|-
+!malnen || a= || mai || pak || e-sum̃  || nanom || '''ki=pe''' || mtir || natus || i= || nru || su 
+ |- 
+ |as || 1sgRS= || come || to || LOC-house || yesterday || 3sgPS=PF || write || paper || 3sgRS= || two || PF
+|-
+| colspan=&quot;20&quot;| (138) When I COME home (yesterday),  he WRITE two letters (=he finished
+writing them just before I came)
+|}</text>
+      <sha1>t2h7aitnhkdn7op4qm8aie06rbmxbag</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Unified file structure</title>
+    <ns>0</ns>
+    <id>56</id>
+    <revision>
+      <id>558</id>
+      <timestamp>2017-03-10T12:01:26Z</timestamp>
+      <contributor>
+        <username>Druskats</username>
+        <id>3</id>
+      </contributor>
+      <comment>Die Seite wurde neu angelegt: „== Unified file structure ==  The project’s git repository exhibits the unified file structure outlined below.  == Naming conventions ==  The conventions for…“</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="3847">== Unified file structure ==
+
+The project’s git repository exhibits the unified file structure outlined below.
+
+== Naming conventions ==
+
+The conventions for naming corpus files and directories in the git repository is as follows.
+
+* All names in lowercase
+* No spaces, instead use dashes (&lt;code&gt;-&lt;/code&gt;)
+
+== Directory structure ==
+
+&lt;pre&gt;git root directory
+├── corpora (1)
+│   └── [language-name] (2)
+│       ├── [format-name] (3)
+│       │   └── [format-file] (4)
+│       ├── original (5)
+│       │   └── [original-files]
+│       ├── read-only-user-files (6)
+│       │   └── [files]
+│       └── [version-directory] (7)
+│           ├── [format-name]
+│           │   └── [original-files]
+│           ├── original
+│           │   └── [original-files]
+│           └── read-only-user-files
+│               └── [file]
+└── processing (8)
+    ├── analysis (9)
+    │   └── [analysis-directory]
+    │       └── [files]
+    └── [processing-type] (10)
+        └── [files]&lt;/pre&gt;
+# &lt;code&gt;corpora&lt;/code&gt; holds the primary data, i.e., the corpus data.
+# One directory per language, named with the name of the language.
+# One directory per format, i.e., format in which the corpus has been persisted.
+# Corpus files in the respective format, cf. below.
+# &lt;code&gt;original&lt;/code&gt; holds the original primary data as acquired from data providers (corpus “authors”, etc.).
+# &lt;code&gt;read-only-user-files&lt;/code&gt; holds files that have been created for specific use cases other than conversion. Note that these files must be read-only, e.g., they will never be converted, published, or referenced.
+# In cases where the corpus has been versioned, each version is completely contained in a version directory, which is a child of the language directory. Version directories should be named &lt;code&gt;v{version number}&lt;/code&gt;, e.g., &lt;code&gt;v2&lt;/code&gt;. A readme file (in [https://daringfireball.net/projects/markdown/ Markdown] format and named &lt;code&gt;README.md&lt;/code&gt;) should be included in the version directory to document reasons for creating the respective version. Version directories replicate the directory structure of the language directory. If a version directories exist for a language, the language directories only children must be the version directories.
+# &lt;code&gt;processing&lt;/code&gt; holds files and directories for analysis results and data processing.
+# &lt;code&gt;analysis&lt;/code&gt; holds directories which are named in respect to the analysis performed on corpus data, e.g., &lt;code&gt;genre-synopsis-extraction&lt;/code&gt;.
+# Processing directories should be direct children of &lt;code&gt;processing&lt;/code&gt; and should be named after the stage at which the processing is performed, i.e., prefixed with &lt;code&gt;pre&lt;/code&gt; or &lt;code&gt;post&lt;/code&gt;, the processing step they are referring to and the processing outcome. E.g., &lt;code&gt;pre-conversion-to-annis&lt;/code&gt; may contain files that refer to processing steps that can be performed before a format conversion to the ANNIS format.
+
+== Corpus file names ==
+
+Files containing primary corpus data should be named as follows. Note that if there is only one corpus data file per language, the original ID must be replaced with &lt;code&gt;corpus&lt;/code&gt; to document that the file holds the complete corpus (as opposed to one or more corpus documents).
+
+&lt;pre&gt;&amp;lt;language-name&amp;gt;-&amp;lt;format&amp;gt;-&amp;lt;orig-id/`corpus`&amp;gt;.&amp;lt;file-extension&amp;gt;&lt;/pre&gt;
+E.g., a file containing a document called ''interview1'' from a Mavea corpus in the Toolbox text format would be named &lt;code&gt;mavea-toolbox-interview1.txt&lt;/code&gt;. A file containing a complete corpus from Daakie in the FLExText format would be named &lt;code&gt;daakie-flextext-corpus.flextext&lt;/code&gt;.</text>
+      <sha1>90xsag8u8a8dzuwgktc9xpbw0xijoai</sha1>
+    </revision>
+  </page>
+</mediawiki>
